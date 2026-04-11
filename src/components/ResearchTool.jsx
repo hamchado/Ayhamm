@@ -2,12 +2,14 @@ import { useState } from 'react'
 import ReferenceExtractor from './ReferenceExtractor'
 import SPSSAnalysis from './SPSSAnalysis'
 import ArticleWriter from './ArticleWriter'
+import AIAssistant from './AIAssistant'
 import './ResearchTool.css'
 
 const TABS = [
   { id: 'references', label: '📚 استخراج المراجع', component: ReferenceExtractor },
   { id: 'spss', label: '📊 التحليل الإحصائي', component: SPSSAnalysis },
   { id: 'article', label: '✍️ كتابة المقال', component: ArticleWriter },
+  { id: 'ai', label: '🤖 المساعد الذكي', component: AIAssistant },
 ]
 
 function ResearchTool() {
