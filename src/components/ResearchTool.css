@@ -523,3 +523,199 @@
   .search-bar { flex-direction: column; }
   .search-input { min-width: unset; }
 }
+
+/* ─── AI Assistant ─────────────────────────────────────────────────── */
+.ai-assistant { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.ai-settings-bar { display: flex; align-items: center; gap: 0.8rem; }
+
+.ai-settings-panel {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.settings-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.hint {
+  color: #60a5fa;
+  font-size: 0.78rem;
+  margin-top: 0.2rem;
+}
+
+/* panels inside AI section */
+.ai-panel {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.panel-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #93c5fd;
+  margin: 0 0 0.8rem;
+}
+
+.panel-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.panel-title-row .panel-title { margin: 0; }
+
+.gh-file-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+}
+
+.status-msg {
+  padding: 0.5rem 0.8rem;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+.status-msg.ok { background: #052e16; border: 1px solid #16a34a; color: #86efac; }
+.status-msg.err { background: #450a0a; border: 1px solid #dc2626; color: #fca5a5; }
+
+.file-preview {
+  background: #131f31;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.file-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  background: #1e293b;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+.file-content {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 0.7rem 0.9rem;
+  margin: 0;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  white-space: pre-wrap;
+  direction: ltr;
+  text-align: left;
+}
+
+/* Chat */
+.chat-box {
+  min-height: 220px;
+  max-height: 420px;
+  overflow-y: auto;
+  background: #060e1c;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  scroll-behavior: smooth;
+}
+
+.chat-empty {
+  color: #475569;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.chat-msg { display: flex; flex-direction: column; gap: 0.25rem; max-width: 88%; }
+.chat-msg.user { align-self: flex-end; align-items: flex-end; }
+.chat-msg.assistant { align-self: flex-start; }
+
+.msg-role { font-size: 0.75rem; color: #64748b; font-weight: 600; }
+
+.msg-content {
+  background: #1e293b;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  color: #e2e8f0;
+  direction: auto;
+  text-align: start;
+}
+.chat-msg.user .msg-content {
+  background: #1d3a6e;
+  color: #bfdbfe;
+}
+
+.chat-input-row { display: flex; flex-direction: column; gap: 0.6rem; }
+.chat-input { direction: rtl; resize: vertical; }
+
+.chat-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.include-file-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+/* Typing indicator */
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  padding: 0.65rem 0.9rem;
+  background: #1e293b;
+  border-radius: 10px;
+  width: fit-content;
+}
+.typing-indicator span {
+  width: 7px;
+  height: 7px;
+  background: #60a5fa;
+  border-radius: 50%;
+  animation: bounce 1.2s infinite;
+}
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+
+/* Writer section */
+.write-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.write-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+

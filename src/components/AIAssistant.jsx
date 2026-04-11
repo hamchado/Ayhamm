@@ -44,8 +44,9 @@ async function ghWriteFile(owner, repo, path, content, message, token, sha) {
 
 // ─── AI API helpers ────────────────────────────────────────────────────────────
 
-async function callOpenAI(apiKey, messages, model = 'gpt-4o-mini') {
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
+/** OpenAI-compatible helper – works for OpenAI and GitHub Models (Copilot) */
+async function callOpenAICompat(endpoint, apiKey, messages, model) {
+  const res = await fetch(`${endpoint}/chat/completions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -59,6 +60,20 @@ async function callOpenAI(apiKey, messages, model = 'gpt-4o-mini') {
   }
   const data = await res.json()
   return data.choices[0].message.content
+}
+
+async function callOpenAI(apiKey, messages, model = 'gpt-4o-mini') {
+  return callOpenAICompat('https://api.openai.com/v1', apiKey, messages, model)
+}
+
+/** GitHub Copilot via GitHub Models – uses your GitHub PAT as the API key */
+async function callGitHubCopilot(ghToken, messages, model = 'gpt-4o') {
+  return callOpenAICompat(
+    'https://models.inference.ai.azure.com',
+    ghToken,
+    messages,
+    model
+  )
 }
 
 async function callGemini(apiKey, messages) {
@@ -95,8 +110,9 @@ async function callGemini(apiKey, messages) {
 
 function AIAssistant() {
   // Settings
-  const [provider, setProvider] = useState('gemini')
+  const [provider, setProvider] = useState('copilot')
   const [aiKey, setAiKey] = useState('')
+  const [copilotModel, setCopilotModel] = useState('gpt-4o')
   const [ghToken, setGhToken] = useState('')
   const [settingsOpen, setSettingsOpen] = useState(true)
 
@@ -182,10 +198,15 @@ function AIAssistant() {
   // ── Send message to AI ──
   async function sendMessage() {
     if (!input.trim()) return
-    if (!aiKey.trim()) {
+
+    // For Copilot the GitHub token acts as the key; for others a separate key is needed
+    const effectiveKey = provider === 'copilot' ? ghToken : aiKey
+    if (!effectiveKey.trim()) {
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: '⚠️ أدخل مفتاح API الخاص بك في الإعدادات أولاً.',
+        content: provider === 'copilot'
+          ? '⚠️ أدخل GitHub Token في الإعدادات أولاً (يُستخدم كمفتاح لـ Copilot).'
+          : '⚠️ أدخل مفتاح API الخاص بك في الإعدادات أولاً.',
       }])
       return
     }
@@ -206,7 +227,9 @@ function AIAssistant() {
     try {
       const builtMessages = [{ role: 'system', content: systemContent }, ...newHistory]
       let reply
-      if (provider === 'openai') {
+      if (provider === 'copilot') {
+        reply = await callGitHubCopilot(ghToken, builtMessages, copilotModel)
+      } else if (provider === 'openai') {
         reply = await callOpenAI(aiKey, builtMessages)
       } else {
         reply = await callGemini(aiKey, builtMessages)
@@ -259,34 +282,59 @@ function AIAssistant() {
                 value={provider}
                 onChange={e => setProvider(e.target.value)}
               >
+                <option value="copilot">🤖 GitHub Copilot (GitHub Models)</option>
                 <option value="gemini">Google Gemini (gemini-2.0-flash)</option>
                 <option value="openai">OpenAI (gpt-4o-mini)</option>
               </select>
             </div>
-            <div className="input-group">
-              <label>
-                {provider === 'openai' ? 'OpenAI API Key' : 'Google Gemini API Key'}
-                &nbsp;
-                <a
-                  href={provider === 'openai'
-                    ? 'https://platform.openai.com/api-keys'
-                    : 'https://aistudio.google.com/app/apikey'}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-link"
-                  style={{ fontSize: '0.78rem' }}
+
+            {provider === 'copilot' && (
+              <div className="input-group">
+                <label>
+                  النموذج
+                </label>
+                <select
+                  className="rows-select"
+                  value={copilotModel}
+                  onChange={e => setCopilotModel(e.target.value)}
                 >
-                  احصل على مفتاح
-                </a>
-              </label>
-              <input
-                type="password"
-                className="mu-input"
-                placeholder="أدخل المفتاح هنا..."
-                value={aiKey}
-                onChange={e => setAiKey(e.target.value)}
-              />
-            </div>
+                  <option value="gpt-4o">gpt-4o</option>
+                  <option value="gpt-4o-mini">gpt-4o-mini</option>
+                  <option value="o1-mini">o1-mini</option>
+                  <option value="o1-preview">o1-preview</option>
+                  <option value="Meta-Llama-3.1-405B-Instruct">Llama 3.1 405B</option>
+                  <option value="Mistral-large">Mistral Large</option>
+                </select>
+              </div>
+            )}
+
+            {provider !== 'copilot' && (
+              <div className="input-group">
+                <label>
+                  {provider === 'openai' ? 'OpenAI API Key' : 'Google Gemini API Key'}
+                  &nbsp;
+                  <a
+                    href={provider === 'openai'
+                      ? 'https://platform.openai.com/api-keys'
+                      : 'https://aistudio.google.com/app/apikey'}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-link"
+                    style={{ fontSize: '0.78rem' }}
+                  >
+                    احصل على مفتاح
+                  </a>
+                </label>
+                <input
+                  type="password"
+                  className="mu-input"
+                  placeholder="أدخل المفتاح هنا..."
+                  value={aiKey}
+                  onChange={e => setAiKey(e.target.value)}
+                />
+              </div>
+            )}
+
             <div className="input-group">
               <label>
                 GitHub Personal Access Token
@@ -304,10 +352,15 @@ function AIAssistant() {
               <input
                 type="password"
                 className="mu-input"
-                placeholder="ghp_... (مطلوب للكتابة)"
+                placeholder={provider === 'copilot' ? 'ghp_... (مطلوب للـ Copilot والكتابة)' : 'ghp_... (مطلوب للكتابة)'}
                 value={ghToken}
                 onChange={e => setGhToken(e.target.value)}
               />
+              {provider === 'copilot' && (
+                <small className="hint">
+                  💡 للـ Copilot: يُستخدم نفس الـ Token للدردشة وقراءة/كتابة الملفات
+                </small>
+              )}
             </div>
           </div>
 
