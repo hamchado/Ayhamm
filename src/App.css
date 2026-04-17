@@ -491,6 +491,12 @@ textarea {
   background: #f8fafc;
 }
 
+.form-status {
+  margin: 0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
 .appointment-info {
   display: grid;
   gap: 1.5rem;

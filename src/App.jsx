@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 
 const stats = [
@@ -127,6 +128,21 @@ const timeline = [
 ]
 
 function App() {
+  const [appointmentStatus, setAppointmentStatus] = useState('')
+  const [fileStatus, setFileStatus] = useState('')
+
+  const handleAppointmentSubmit = (event) => {
+    event.preventDefault()
+    setAppointmentStatus('تم إرسال طلبك بنجاح، سنعاود التواصل خلال 24 ساعة.')
+    event.target.reset()
+  }
+
+  const handleFileSubmit = (event) => {
+    event.preventDefault()
+    setFileStatus('تم استلام ملفك الطبي وسيتم التواصل معك قريباً.')
+    event.target.reset()
+  }
+
   return (
     <div className="page" dir="rtl">
       <nav className="navbar">
@@ -262,7 +278,7 @@ function App() {
               <article className="info-card" key={service.title}>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <button type="button" className="text-button">اعرف المزيد</button>
+                <a className="text-button" href="#appointment">احجز استشارة</a>
               </article>
             ))}
           </div>
@@ -344,16 +360,19 @@ function App() {
                 <span>محدث 2026</span>
               </div>
             </div>
-            <form className="cv-form">
+            <form className="cv-form" onSubmit={handleFileSubmit}>
               <h3>ارفع ملفك الطبي</h3>
               <p>
                 شاركنا صور الأشعة أو التقارير لنجهز خطة علاج أولية.
               </p>
               <label htmlFor="medical-file">اختر الملف</label>
-              <input id="medical-file" type="file" accept=".pdf,.jpg,.png" />
-              <button type="button" className="secondary">
+              <input id="medical-file" type="file" accept=".pdf,.jpg,.png" required />
+              <button type="submit" className="secondary">
                 إرسال الملف
               </button>
+              {fileStatus ? (
+                <p className="form-status" role="status">{fileStatus}</p>
+              ) : null}
             </form>
           </div>
         </section>
@@ -369,18 +388,18 @@ function App() {
             </p>
           </div>
           <div className="appointment">
-            <form className="appointment-form">
+            <form className="appointment-form" onSubmit={handleAppointmentSubmit}>
               <div className="input-group">
                 <label htmlFor="full-name">الاسم الكامل</label>
-                <input id="full-name" type="text" placeholder="اكتب اسمك" />
+                <input id="full-name" type="text" placeholder="اكتب اسمك" required />
               </div>
               <div className="input-group">
                 <label htmlFor="phone">رقم الهاتف</label>
-                <input id="phone" type="tel" placeholder="+963 9xx xxx xxx" />
+                <input id="phone" type="tel" placeholder="+963 9xx xxx xxx" required />
               </div>
               <div className="input-group">
                 <label htmlFor="service">الخدمة المطلوبة</label>
-                <select id="service">
+                <select id="service" required>
                   <option>استشارة عامة</option>
                   <option>تجميل الأسنان</option>
                   <option>زراعة الأسنان</option>
@@ -391,9 +410,12 @@ function App() {
                 <label htmlFor="message">ملاحظات إضافية</label>
                 <textarea id="message" rows="4" placeholder="اكتب التفاصيل"></textarea>
               </div>
-              <button type="button" className="primary">
+              <button type="submit" className="primary">
                 إرسال الطلب
               </button>
+              {appointmentStatus ? (
+                <p className="form-status" role="status">{appointmentStatus}</p>
+              ) : null}
             </form>
             <div className="appointment-info">
               <h3>معلومات سريعة</h3>
