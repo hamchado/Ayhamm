@@ -100,6 +100,27 @@ const newsItems = [
   },
 ]
 
+const tickerItems = [
+  'تحديثات يومية مع صياغة واضحة وسريعة القراءة',
+  'أولوية للأخبار الرسمية والتنويهات النقابية',
+  'تغطية الفعاليات العلمية والمجتمعية بشكل بصري احترافي',
+]
+
+const editorialPillars = [
+  {
+    title: 'الموثوقية',
+    text: 'كل خبر يعرض بصيغة رسمية مختصرة مع تاريخ واضح ومسار وصول مباشر للتفاصيل.',
+  },
+  {
+    title: 'السرعة',
+    text: 'واجهة أخبار سريعة التحميل والتصفح مع تسلسل منطقي يقود المستخدم للمعلومة فوراً.',
+  },
+  {
+    title: 'الوضوح البصري',
+    text: 'تباين قوي، مسافات متناسقة، وبطاقات مقروءة على كل أحجام الشاشات.',
+  },
+]
+
 const galleryCategories = [
   { id: 'all', label: 'كل الأقسام' },
   { id: 'scientific', label: 'علمي' },
@@ -327,6 +348,8 @@ function App() {
 
   const previousNews = newsIndex > 0 ? newsItems[newsIndex - 1] : null
   const nextNews = newsIndex >= 0 && newsIndex < newsItems.length - 1 ? newsItems[newsIndex + 1] : null
+  const featuredNews = newsItems[0]
+  const latestHeadlines = newsItems.slice(0, 4)
 
   function renderHome() {
     return (
@@ -367,7 +390,52 @@ function App() {
           </div>
         </section>
 
+        <section className="news-ticker">
+          <div className="container news-ticker__inner">
+            <strong>موجز الأخبار</strong>
+            <div className="news-ticker__track">
+              {tickerItems.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <main className="container">
+          <section className="section">
+            <div className="section__head fade-up">
+              <h2>الواجهة الإخبارية الرسمية</h2>
+              <p>توزيع بصري أقرب للمنصات الإخبارية الكبرى مع خبر رئيسي وعناوين مباشرة.</p>
+            </div>
+            <div className="news-layout">
+              <article className="news-lead card card--news fade-up">
+                <p className="meta">{featuredNews.date}</p>
+                <h3>{featuredNews.title}</h3>
+                <p>{featuredNews.excerpt}</p>
+                <div className="news-lead__actions">
+                  <a className="btn btn--lux" href={`#/news/${featuredNews.slug}`}>
+                    اقرأ الخبر الرئيسي
+                  </a>
+                  <a className="btn btn--ghost" href={`#/news-section/${featuredNews.section}`}>
+                    جميع أخبار القسم
+                  </a>
+                </div>
+              </article>
+
+              <aside className="news-brief card fade-up delay-1">
+                <h3>عناوين سريعة</h3>
+                <ul>
+                  {latestHeadlines.map((item) => (
+                    <li key={item.slug}>
+                      <a href={`#/news/${item.slug}`}>{item.title}</a>
+                      <small>{item.date}</small>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </div>
+          </section>
+
           <section className="section">
             <div className="section__head fade-up">
               <h2>الخدمات الأساسية</h2>
@@ -488,6 +556,21 @@ function App() {
                 <h3>3) تفاعل</h3>
                 <p>شارك الأخبار والفعاليات مباشرة عبر وسائل التواصل من داخل الصفحة.</p>
               </article>
+            </div>
+          </section>
+
+          <section className="section">
+            <div className="section__head fade-up">
+              <h2>روح المنصة الإخبارية</h2>
+              <p>ثلاث ركائز تحافظ على أناقة الموقع الرسمي وقوته في نقل الأخبار.</p>
+            </div>
+            <div className="cards cards--premium">
+              {editorialPillars.map((pillar, index) => (
+                <article key={pillar.title} className={`card card--feature fade-up delay-${(index % 3) + 1}`}>
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.text}</p>
+                </article>
+              ))}
             </div>
           </section>
         </main>

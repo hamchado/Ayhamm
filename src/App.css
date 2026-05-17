@@ -200,6 +200,13 @@
   transform: translateY(-2px);
 }
 
+.btn:focus-visible,
+.chip:focus-visible,
+.share-buttons button:focus-visible {
+  outline: 2px solid #c89b3c;
+  outline-offset: 2px;
+}
+
 .btn--small {
   font-size: 0.9rem;
   padding: 0.55rem 0.95rem;
@@ -266,7 +273,7 @@
 }
 
 .section {
-  margin-top: 2rem;
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
 }
 
 .section__head h2,
@@ -282,6 +289,104 @@
 .section-page p,
 .news-detail p {
   color: #3c5847;
+}
+
+.news-ticker {
+  border-top: 1px solid #e5ede7;
+  border-bottom: 1px solid #e5ede7;
+  background: linear-gradient(90deg, #ffffff, #f3f8f4);
+}
+
+.news-ticker__inner {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.news-ticker__inner strong {
+  color: #174d31;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.news-ticker__track {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.news-ticker__track span {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: #edf6ef;
+  border: 1px solid #d7e6db;
+  color: #244f36;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.news-layout {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1rem;
+}
+
+.news-lead {
+  padding: 1.2rem;
+}
+
+.news-lead h3 {
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+}
+
+.news-lead__actions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.news-brief {
+  padding: 1rem;
+}
+
+.news-brief h3 {
+  margin: 0;
+  color: #1c4f34;
+}
+
+.news-brief ul {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.news-brief li {
+  border: 1px solid #deebe3;
+  border-radius: 0.75rem;
+  background: #f8fcf9;
+  padding: 0.65rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.news-brief li a {
+  color: #1a4d31;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.news-brief li a:hover {
+  text-decoration: underline;
+}
+
+.news-brief li small {
+  color: #7d8f84;
 }
 
 .cards {
@@ -788,6 +893,16 @@
   .notification-strip__inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .news-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .news-ticker__inner {
+    padding: 0.5rem 0;
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
