@@ -9,12 +9,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --brand-primary: #0f2942;
-  --brand-accent: #1f6fb6;
-  --brand-soft: #d7e8ff;
-  --surface-bg: #f7f9fc;
-  --surface-card: #ffffff;
-  --text-main: #1b2737;
+  --brand-primary: #174d31;
+  --brand-primary-soft: #1f6840;
+  --brand-gold: #c89b3c;
+  --brand-gold-soft: #efd59c;
+  --surface-bg: #f7faf7;
+  --text-main: #1e2f23;
 }
 
 * {

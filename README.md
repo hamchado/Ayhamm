@@ -1,33 +1,43 @@
-# Latakia Dental Syndicate Branch
+# نقابة أطباء الأسنان فرع اللاذقية
 
-Official web/mobile project for **Latakia Dental Syndicate Branch**, built with **React + Vite + Capacitor**.
+مشروع الواجهة الرسمية (ويب/تطبيق) الخاص بـ **نقابة أطباء الأسنان فرع اللاذقية** مبني باستخدام:
 
-## Requirements
+- React
+- Vite
+- Capacitor
 
-- Node.js **22+**
+## الهوية المعتمدة
+
+- الاسم: نقابة أطباء الأسنان فرع اللاذقية
+- الشعار: مؤقت (Placeholder) إلى حين اعتماد الشعار النهائي
+- الألوان: أخضر + ذهبي
+
+## المتطلبات
+
+- Node.js 22+
 - npm
-- Java 21 (for Android build)
+- Java 21 (لبناء نسخة أندرويد)
 
-## Install
+## التثبيت
 
 ```bash
 npm ci
 ```
 
-## Run locally
+## التشغيل محليًا
 
 ```bash
 npm run dev
 ```
 
-## Validate and build
+## الفحص والبناء
 
 ```bash
 npm run lint
 npm run build
 ```
 
-## Build Android APK
+## بناء APK للأندرويد
 
 ```bash
 npm run build
@@ -36,11 +46,11 @@ cd android
 ./gradlew assembleRelease
 ```
 
-APK output:
+مسار ملف الـ APK الناتج:
 
 `android/app/build/outputs/apk/release/app-release.apk`
 
 ## GitHub Actions
 
-- `deploy-pages.yml`: builds and deploys web app to GitHub Pages
-- `build-android.yml`, `main.yml`, `maein.yml`: build Android release APK on `develop-uat`
+- `deploy-pages.yml`: بناء ونشر نسخة الويب على GitHub Pages
+- `build-android.yml`, `main.yml`, `maein.yml`: بناء إصدار Android على فرع `develop-uat`
