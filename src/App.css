@@ -221,6 +221,16 @@
   background: #fff;
 }
 
+.btn--lux {
+  background: linear-gradient(130deg, #f4d688, #c89b3c);
+  color: #173c28;
+  box-shadow: 0 10px 22px rgba(200, 155, 60, 0.28);
+}
+
+.btn--lux:hover {
+  box-shadow: 0 14px 28px rgba(200, 155, 60, 0.38);
+}
+
 .hero__panel {
   background: linear-gradient(180deg, #18492f 0%, #123825 100%);
   color: #f6fff7;
@@ -296,6 +306,230 @@
 
 .card p {
   margin: 0.55rem 0 0;
+}
+
+.cards--premium {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card--feature,
+.card--news {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #d3e2d8;
+  background: linear-gradient(165deg, #ffffff 0%, #f6fbf7 100%);
+}
+
+.card--feature::before,
+.card--news::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 155, 60, 0.2), transparent 70%);
+  left: -35px;
+  top: -35px;
+}
+
+.card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 0.8rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.65rem;
+  background: linear-gradient(135deg, #e8f5ed, #fff7e2);
+  font-size: 1.2rem;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.gallery-preview img {
+  border-radius: 0.7rem;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.gallery-preview__content {
+  margin-top: 0.7rem;
+}
+
+.gallery-filters {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.gallery-filters h3 {
+  margin: 0 0 0.45rem;
+  color: #18492f;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  border: 1px solid #cedfd3;
+  border-radius: 999px;
+  background: #fff;
+  color: #1b4d31;
+  padding: 0.45rem 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+}
+
+.chip--active {
+  border-color: transparent;
+  color: #fff;
+  background: linear-gradient(135deg, #1f6840, #174d31);
+}
+
+.gallery-insights {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.insight-card {
+  background: #fff;
+  border: 1px solid #d9e7de;
+  border-radius: 0.85rem;
+  padding: 0.8rem;
+}
+
+.insight-card p {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #15492d;
+}
+
+.insight-card small {
+  color: #51705d;
+}
+
+.event-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.event-card {
+  background: #fff;
+  border: 1px solid #d9e7de;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(15, 45, 28, 0.07);
+}
+
+.event-card__cover {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  max-height: 280px;
+}
+
+.event-card__head {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.badges-row {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  background: #eef5f0;
+  color: #1c4e33;
+  border: 1px solid #d6e3da;
+}
+
+.agenda {
+  margin-top: 0.65rem;
+}
+
+.agenda h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  color: #1d4f33;
+}
+
+.agenda__list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.agenda__item {
+  border: 1px solid #dce9e1;
+  border-radius: 0.7rem;
+  padding: 0.5rem 0.65rem;
+  background: #f8fcf9;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.agenda__item strong {
+  color: #174d31;
+}
+
+.agenda__item span {
+  color: #3f5f4c;
+  font-size: 0.92rem;
+}
+
+.event-photos {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.event-photos img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.65rem;
+}
+
+.event-card__footer {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #46634f;
+  font-weight: 700;
+}
+
+.empty-state {
+  color: #6d7f74;
+  margin-top: 1rem;
 }
 
 .timeline {

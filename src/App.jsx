@@ -125,6 +125,12 @@ const events = [
     date: '10-12 تموز 2026',
     location: 'قاعة المؤتمرات - اللاذقية',
     description: 'جلسات علمية مكثفة مع تطبيقات سريرية مباشرة وحالات تفاعلية.',
+    cover: 'https://picsum.photos/seed/summer-forum-cover/1200/700',
+    agenda: [
+      { day: 'اليوم 1', section: 'جلسات افتتاحية وتحديثات علمية متقدمة' },
+      { day: 'اليوم 2', section: 'ورش تطبيقية في الترميم المحافظ' },
+      { day: 'اليوم 3', section: 'حالات سريرية تفاعلية وتقييم نهائي' },
+    ],
     photos: [
       'https://picsum.photos/seed/summer-forum-1/900/600',
       'https://picsum.photos/seed/summer-forum-2/900/600',
@@ -140,6 +146,14 @@ const events = [
     date: '18-22 آب 2026',
     location: 'عدة مراكز مجتمعية - اللاذقية',
     description: 'مبادرة مجتمعية تقدم فحوصات وتوعية صحية في عدة أحياء.',
+    cover: 'https://picsum.photos/seed/community-week-cover/1200/700',
+    agenda: [
+      { day: 'اليوم 1', section: 'انطلاق الحملة وتوزيع الفرق' },
+      { day: 'اليوم 2', section: 'عيادات ميدانية مجانية في الأحياء' },
+      { day: 'اليوم 3', section: 'جلسات توعية مدرسية' },
+      { day: 'اليوم 4', section: 'فحوصات تخصصية للحالات المحولة' },
+      { day: 'اليوم 5', section: 'تقرير ختامي وتوصيات المجتمع' },
+    ],
     photos: [
       'https://picsum.photos/seed/community-week-1/900/600',
       'https://picsum.photos/seed/community-week-2/900/600',
@@ -155,6 +169,11 @@ const events = [
     date: '3-4 أيلول 2026',
     location: 'مركز التدريب النقابي',
     description: 'تدريب عملي على إدارة مواعيد المرضى والملفات الطبية رقمياً.',
+    cover: 'https://picsum.photos/seed/bootcamp-cover/1200/700',
+    agenda: [
+      { day: 'اليوم 1', section: 'تهيئة الأنظمة وإدارة السجلات الطبية' },
+      { day: 'اليوم 2', section: 'سيناريوهات تشغيل وحوكمة بيانات' },
+    ],
     photos: [
       'https://picsum.photos/seed/bootcamp-1/900/600',
       'https://picsum.photos/seed/bootcamp-2/900/600',
@@ -170,6 +189,8 @@ const events = [
     date: '20 تشرين الأول 2026',
     location: 'مدينة المعارض - اللاذقية',
     description: 'جلسات رئيسية ومعرض تقنيات حديثة من شركات ومراكز تدريب.',
+    cover: 'https://picsum.photos/seed/conference-cover/1200/700',
+    agenda: [{ day: 'اليوم 1', section: 'جلسات رئيسية + معرض ابتكارات' }],
     photos: [
       'https://picsum.photos/seed/conference-1/900/600',
       'https://picsum.photos/seed/conference-2/900/600',
@@ -294,6 +315,16 @@ function App() {
     })
   }, [galleryCategory, galleryDays])
 
+  const galleryInsights = useMemo(() => {
+    const totalPhotos = filteredEvents.reduce((sum, event) => sum + event.photos.length, 0)
+    const totalDays = filteredEvents.reduce((sum, event) => sum + event.days, 0)
+    return {
+      events: filteredEvents.length,
+      photos: totalPhotos,
+      days: totalDays,
+    }
+  }, [filteredEvents])
+
   const previousNews = newsIndex > 0 ? newsItems[newsIndex - 1] : null
   const nextNews = newsIndex >= 0 && newsIndex < newsItems.length - 1 ? newsItems[newsIndex + 1] : null
 
@@ -360,6 +391,25 @@ function App() {
 
           <section className="section">
             <div className="section__head fade-up">
+              <h2>أحدث الأخبار بشكل احترافي</h2>
+              <p>نمط بطاقات غني بالبيانات ليسهل التصفح السريع مثل المنصات الكبرى.</p>
+            </div>
+            <div className="cards cards--premium">
+              {newsItems.slice(0, 3).map((item, index) => (
+                <article key={item.slug} className={`card card--news fade-up delay-${(index % 3) + 1}`}>
+                  <p className="meta">{item.date}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.excerpt}</p>
+                  <a className="btn btn--small btn--lux" href={`#/news/${item.slug}`}>
+                    قراءة كاملة
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="section">
+            <div className="section__head fade-up">
               <h2>خارطة الأقسام والتوجيه</h2>
               <p>انتقال سريع لكل قسم أساسي داخل الموقع.</p>
             </div>
@@ -418,6 +468,27 @@ function App() {
             <a href="#/events-gallery" className="btn btn--lux">
               عرض المعرض الكامل
             </a>
+          </section>
+
+          <section className="section member-journey">
+            <div className="section__head fade-up">
+              <h2>رحلة العضو داخل المنصة</h2>
+              <p>مسار واضح من الاطلاع وحتى تنفيذ الإجراء المطلوب خلال دقائق.</p>
+            </div>
+            <div className="cards cards--premium">
+              <article className="card card--feature hover-lift">
+                <h3>1) اكتشف</h3>
+                <p>تصفّح آخر الأخبار والفعاليات في واجهة مخصصة للقراءة السريعة.</p>
+              </article>
+              <article className="card card--feature hover-lift">
+                <h3>2) اختر</h3>
+                <p>استخدم فلاتر الأيام والتصنيفات للوصول الدقيق للفعالية المطلوبة.</p>
+              </article>
+              <article className="card card--feature hover-lift">
+                <h3>3) تفاعل</h3>
+                <p>شارك الأخبار والفعاليات مباشرة عبر وسائل التواصل من داخل الصفحة.</p>
+              </article>
+            </div>
           </section>
         </main>
       </>
@@ -497,9 +568,25 @@ function App() {
           </div>
         </section>
 
+        <section className="gallery-insights">
+          <article className="insight-card">
+            <p>{galleryInsights.events}</p>
+            <small>فعالية مطابقة</small>
+          </article>
+          <article className="insight-card">
+            <p>{galleryInsights.photos}</p>
+            <small>صورة ضمن النتائج</small>
+          </article>
+          <article className="insight-card">
+            <p>{galleryInsights.days}</p>
+            <small>إجمالي أيام التغطية</small>
+          </article>
+        </section>
+
         <div className="event-grid">
           {filteredEvents.map((event) => (
-            <article key={event.id} className="event-card">
+            <article key={event.id} className="event-card" id={event.id}>
+              <img className="event-card__cover" src={event.cover} alt={event.title} loading="lazy" />
               <div className="event-card__head">
                 <h2>{event.title}</h2>
                 <div className="badges-row">
@@ -511,10 +598,29 @@ function App() {
               <p>{event.description}</p>
               <p className="meta">{event.date} • {event.location}</p>
 
+              <div className="agenda">
+                <h3>برنامج الأيام</h3>
+                <div className="agenda__list">
+                  {event.agenda.map((agendaItem) => (
+                    <div key={`${event.id}-${agendaItem.day}`} className="agenda__item">
+                      <strong>{agendaItem.day}</strong>
+                      <span>{agendaItem.section}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <div className="event-photos">
                 {event.photos.map((photoUrl, idx) => (
                   <img key={photoUrl} src={photoUrl} alt={`${event.title} - صورة ${idx + 1}`} loading="lazy" />
                 ))}
+              </div>
+
+              <div className="event-card__footer">
+                <span>إجمالي الصور: {event.photos.length}</span>
+                <button type="button" className="btn btn--small btn--lux">
+                  حفظ للمراجعة
+                </button>
               </div>
             </article>
           ))}
