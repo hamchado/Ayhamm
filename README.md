@@ -1,49 +1,56 @@
-# ARH app
+# نقابة أطباء الأسنان فرع اللاذقية
 
-تطبيق Android مبني باستخدام React + Vite + Capacitor
+مشروع الواجهة الرسمية (ويب/تطبيق) الخاص بـ **نقابة أطباء الأسنان فرع اللاذقية** مبني باستخدام:
 
-## 🚀 المميزات
+- React
+- Vite
+- Capacitor
 
-- ⚛️ React 18
-- ⚡ Vite
-- 📱 Capacitor (تحويل إلى Android)
-- 🤖 GitHub Actions (بناء تلقائي)
+## الهوية المعتمدة
 
-## 📦 التثبيت
+- الاسم: نقابة أطباء الأسنان فرع اللاذقية
+- الشعار: مؤقت (Placeholder) إلى حين اعتماد الشعار النهائي
+- الألوان: أخضر + ذهبي
+
+## المتطلبات
+
+- Node.js 22+
+- npm
+- Java 21 (لبناء نسخة أندرويد)
+
+## التثبيت
 
 ```bash
-npm install
+npm ci
 ```
 
-## 🏗️ البناء
-
-```bash
-# بناء الويب
-npm run build
-
-# مزامنة Capacitor
-npx cap sync android
-
-# فتح في Android Studio (اختياري)
-npx cap open android
-```
-
-## 📲 الحصول على APK
-
-1. ادفع الكود على GitHub
-2. انتظر GitHub Actions يبني APK
-3. حمّل APK من قسم Artifacts
-
-## 🛠️ التطوير
+## التشغيل محليًا
 
 ```bash
 npm run dev
 ```
 
-## 📄 الترخيص
+## الفحص والبناء
 
-MIT
+```bash
+npm run lint
+npm run build
+```
 
----
+## بناء APK للأندرويد
 
-Built with ❤️ using Termux
+```bash
+npm run build
+npx cap sync android
+cd android
+./gradlew assembleRelease
+```
+
+مسار ملف الـ APK الناتج:
+
+`android/app/build/outputs/apk/release/app-release.apk`
+
+## GitHub Actions
+
+- `deploy-pages.yml`: بناء ونشر نسخة الويب على GitHub Pages
+- `build-android.yml`, `main.yml`, `maein.yml`: بناء إصدار Android على فرع `develop-uat`

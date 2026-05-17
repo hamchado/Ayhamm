@@ -1,4 +1,4 @@
-package com.getcapacitor.myapp;
+package com.latakia.dentalsyndicatebranch;
 
 import static org.junit.Assert.*;
 
