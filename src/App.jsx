@@ -166,13 +166,6 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    if (notificationPermission === 'default') {
-      requestNotifications()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   const currentNews = useMemo(
     () => (route.type === 'news' ? newsItems.find((item) => item.slug === route.slug) : null),
     [route],
