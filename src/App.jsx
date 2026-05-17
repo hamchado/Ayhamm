@@ -56,6 +56,14 @@ const newsItems = [
     title: 'آخر الأخبار: تحديثات نقابية ومهنية لشهر أيار 2026',
     date: '15 أيار 2026',
     excerpt: 'حزمة تحديثات جديدة لخدمات الأعضاء والبوابة الإلكترونية للنقابة.',
+    cover: 'https://picsum.photos/seed/news-cover-1/1200/700',
+    reporter: 'المكتب الإعلامي',
+    readTime: '4 دقائق',
+    tags: ['آخر الأخبار', 'خدمات رقمية', 'نقابة'],
+    gallery: [
+      'https://picsum.photos/seed/news-gallery-1a/1100/700',
+      'https://picsum.photos/seed/news-gallery-1b/1100/700',
+    ],
     content: [
       'تعلن نقابة أطباء الأسنان فرع اللاذقية عن مجموعة تحديثات جديدة تشمل تبسيط إجراءات المعاملات وتوسيع نافذة الخدمات الرقمية.',
       'تشمل التحديثات تحسين عرض الأخبار لتكون القراءة أسرع مع تفاصيل منظمة وروابط مشاركة مباشرة.',
@@ -68,6 +76,14 @@ const newsItems = [
     title: 'نشاط علمي حول أحدث بروتوكولات الترميم السني',
     date: '2 حزيران 2026',
     excerpt: 'برنامج علمي مكثف بمشاركة خبراء في طب الأسنان الترميمي.',
+    cover: 'https://picsum.photos/seed/news-cover-2/1200/700',
+    reporter: 'لجنة التعليم المستمر',
+    readTime: '5 دقائق',
+    tags: ['أنشطة', 'علمي', 'تدريب'],
+    gallery: [
+      'https://picsum.photos/seed/news-gallery-2a/1100/700',
+      'https://picsum.photos/seed/news-gallery-2b/1100/700',
+    ],
     content: [
       'ينطلق النشاط العلمي ضمن خطة الفرع السنوية للتعليم المستمر، مع جلسات تطبيقية مركزة.',
       'يركز البرنامج على القرارات السريرية الحديثة في الترميمات المحافظة والتعامل مع الحالات المعقدة.',
@@ -80,6 +96,14 @@ const newsItems = [
     title: 'إعلان هام: الموعد النهائي لتجديد الاشتراك السنوي',
     date: '11 حزيران 2026',
     excerpt: 'تنويه رسمي بخصوص المواعيد والإجراءات المطلوبة لتجديد الاشتراك.',
+    cover: 'https://picsum.photos/seed/news-cover-3/1200/700',
+    reporter: 'شؤون الأطباء',
+    readTime: '3 دقائق',
+    tags: ['إعلانات', 'اشتراكات', 'تنويه'],
+    gallery: [
+      'https://picsum.photos/seed/news-gallery-3a/1100/700',
+      'https://picsum.photos/seed/news-gallery-3b/1100/700',
+    ],
     content: [
       'تؤكد النقابة على ضرورة استكمال إجراءات تجديد الاشتراك ضمن المدة المحددة في التعميم الرسمي.',
       'تُستقبل الطلبات عبر مكتب شؤون الأطباء أو عبر النماذج الإلكترونية المعتمدة.',
@@ -92,6 +116,14 @@ const newsItems = [
     title: 'آخر الأخبار: إطلاق باقة خدمات رقمية جديدة',
     date: '20 حزيران 2026',
     excerpt: 'إطلاق نماذج رقمية جديدة لتسريع تقديم الطلبات والمتابعة.',
+    cover: 'https://picsum.photos/seed/news-cover-4/1200/700',
+    reporter: 'وحدة التحول الرقمي',
+    readTime: '4 دقائق',
+    tags: ['آخر الأخبار', 'تحول رقمي', 'خدمات'],
+    gallery: [
+      'https://picsum.photos/seed/news-gallery-4a/1100/700',
+      'https://picsum.photos/seed/news-gallery-4b/1100/700',
+    ],
     content: [
       'أطلق الفرع مجموعة خدمات رقمية جديدة لتسهيل تقديم الطلبات النقابية دون الحاجة إلى مراجعات متعددة.',
       'تساعد هذه الباقة في تسريع مسار المعاملات ورفع كفاءة التواصل بين الأعضاء والفرع.',
@@ -119,6 +151,24 @@ const editorialPillars = [
     title: 'الوضوح البصري',
     text: 'تباين قوي، مسافات متناسقة، وبطاقات مقروءة على كل أحجام الشاشات.',
   },
+]
+
+const stylePresets = [
+  { id: 'default', label: 'رسمي كلاسيكي', radius: 14, gap: 1, themeClass: '' },
+  { id: 'royal', label: 'ملكي فاخر', radius: 22, gap: 1.08, themeClass: 'site--theme-royal' },
+  { id: 'midnight', label: 'ليلي حديث', radius: 12, gap: 0.95, themeClass: 'site--theme-midnight' },
+]
+
+const buttonVariants = [
+  { id: 'rounded', label: 'منحني', className: 'site--btn-rounded' },
+  { id: 'pill', label: 'حبّة', className: 'site--btn-pill' },
+  { id: 'sharp', label: 'حواف واضحة', className: 'site--btn-sharp' },
+]
+
+const cardVariants = [
+  { id: 'soft', label: 'ناعم', className: 'site--cards-soft' },
+  { id: 'glass', label: 'زجاجي', className: 'site--cards-glass' },
+  { id: 'bold', label: 'جريء', className: 'site--cards-bold' },
 ]
 
 const galleryCategories = [
@@ -152,6 +202,8 @@ const events = [
       { day: 'اليوم 2', section: 'ورش تطبيقية في الترميم المحافظ' },
       { day: 'اليوم 3', section: 'حالات سريرية تفاعلية وتقييم نهائي' },
     ],
+    price: '250,000 ل.س',
+    registration: 'التسجيل عبر نموذج النشاط العلمي في البوابة أو من خلال مكتب التعليم المستمر.',
     photos: [
       'https://picsum.photos/seed/summer-forum-1/900/600',
       'https://picsum.photos/seed/summer-forum-2/900/600',
@@ -175,6 +227,8 @@ const events = [
       { day: 'اليوم 4', section: 'فحوصات تخصصية للحالات المحولة' },
       { day: 'اليوم 5', section: 'تقرير ختامي وتوصيات المجتمع' },
     ],
+    price: 'مجاني',
+    registration: 'التسجيل التطوعي عبر لجنة العمل المجتمعي مع تأكيد الاسم والاختصاص.',
     photos: [
       'https://picsum.photos/seed/community-week-1/900/600',
       'https://picsum.photos/seed/community-week-2/900/600',
@@ -195,6 +249,8 @@ const events = [
       { day: 'اليوم 1', section: 'تهيئة الأنظمة وإدارة السجلات الطبية' },
       { day: 'اليوم 2', section: 'سيناريوهات تشغيل وحوكمة بيانات' },
     ],
+    price: '180,000 ل.س',
+    registration: 'حجز المقعد عبر منصة التدريب الرقمي ثم تسديد الرسوم في صندوق الفرع.',
     photos: [
       'https://picsum.photos/seed/bootcamp-1/900/600',
       'https://picsum.photos/seed/bootcamp-2/900/600',
@@ -212,6 +268,8 @@ const events = [
     description: 'جلسات رئيسية ومعرض تقنيات حديثة من شركات ومراكز تدريب.',
     cover: 'https://picsum.photos/seed/conference-cover/1200/700',
     agenda: [{ day: 'اليوم 1', section: 'جلسات رئيسية + معرض ابتكارات' }],
+    price: '300,000 ل.س',
+    registration: 'التسجيل الإلكتروني المباشر مع إرسال رمز التأكيد إلى البريد الإلكتروني.',
     photos: [
       'https://picsum.photos/seed/conference-1/900/600',
       'https://picsum.photos/seed/conference-2/900/600',
@@ -228,6 +286,7 @@ function getRoute() {
 
   if (hash === 'about') return { type: 'about' }
   if (hash === 'events-gallery') return { type: 'events-gallery' }
+  if (hash === 'admin-dashboard') return { type: 'admin-dashboard' }
 
   if (hash.startsWith('news/')) {
     return { type: 'news', slug: hash.replace('news/', '') }
@@ -262,6 +321,13 @@ function App() {
   const [showTopButton, setShowTopButton] = useState(false)
   const [galleryCategory, setGalleryCategory] = useState('all')
   const [galleryDays, setGalleryDays] = useState('all')
+  const [newsSectionFilter, setNewsSectionFilter] = useState('all')
+  const [newsSearch, setNewsSearch] = useState('')
+  const [adminRadius, setAdminRadius] = useState(14)
+  const [adminGap, setAdminGap] = useState(1)
+  const [buttonVariant, setButtonVariant] = useState('rounded')
+  const [cardVariant, setCardVariant] = useState('soft')
+  const [themeVariant, setThemeVariant] = useState('default')
   const [notificationPermission, setNotificationPermission] = useState(
     typeof window !== 'undefined' && 'Notification' in window ? Notification.permission : 'unsupported',
   )
@@ -350,6 +416,30 @@ function App() {
   const nextNews = newsIndex >= 0 && newsIndex < newsItems.length - 1 ? newsItems[newsIndex + 1] : null
   const featuredNews = newsItems[0]
   const latestHeadlines = newsItems.slice(0, 4)
+  const selectedTheme = stylePresets.find((item) => item.id === themeVariant) ?? stylePresets[0]
+  const selectedButtonClass =
+    buttonVariants.find((item) => item.id === buttonVariant)?.className ?? 'site--btn-rounded'
+  const selectedCardClass =
+    cardVariants.find((item) => item.id === cardVariant)?.className ?? 'site--cards-soft'
+
+  const filteredLatestNews = useMemo(() => {
+    const query = newsSearch.trim().toLowerCase()
+    return newsItems
+      .filter((item) => newsSectionFilter === 'all' || item.section === newsSectionFilter)
+      .filter((item) => {
+        if (!query) return true
+        const haystack = `${item.title} ${item.excerpt} ${item.tags.join(' ')}`.toLowerCase()
+        return haystack.includes(query)
+      })
+  }, [newsSearch, newsSectionFilter])
+
+  function applyPreset(presetId) {
+    const preset = stylePresets.find((item) => item.id === presetId)
+    if (!preset) return
+    setThemeVariant(preset.id)
+    setAdminRadius(preset.radius)
+    setAdminGap(preset.gap)
+  }
 
   function renderHome() {
     return (
@@ -394,8 +484,8 @@ function App() {
           <div className="container news-ticker__inner">
             <strong>موجز الأخبار</strong>
             <div className="news-ticker__track">
-              {tickerItems.map((item) => (
-                <span key={item}>{item}</span>
+              {[...tickerItems, ...tickerItems].map((item, index) => (
+                <span key={`${item}-${index}`}>{item}</span>
               ))}
             </div>
           </div>
@@ -460,20 +550,55 @@ function App() {
           <section className="section">
             <div className="section__head fade-up">
               <h2>أحدث الأخبار بشكل احترافي</h2>
-              <p>نمط بطاقات غني بالبيانات ليسهل التصفح السريع مثل المنصات الكبرى.</p>
+              <p>فلترة مباشرة، بطاقات محسنة، ونقر كامل للانتقال إلى صفحة الخبر.</p>
+            </div>
+            <div className="news-filter-bar fade-up">
+              <div className="filter-chips">
+                <button
+                  type="button"
+                  className={`chip ${newsSectionFilter === 'all' ? 'chip--active' : ''}`}
+                  onClick={() => setNewsSectionFilter('all')}
+                >
+                  كل الأخبار
+                </button>
+                {newsSections.map((section) => (
+                  <button
+                    key={section.id}
+                    type="button"
+                    className={`chip ${newsSectionFilter === section.id ? 'chip--active' : ''}`}
+                    onClick={() => setNewsSectionFilter(section.id)}
+                  >
+                    {section.title}
+                  </button>
+                ))}
+              </div>
+              <input
+                type="search"
+                value={newsSearch}
+                onChange={(event) => setNewsSearch(event.target.value)}
+                className="news-search"
+                placeholder="ابحث داخل آخر الأخبار..."
+                aria-label="بحث في آخر الأخبار"
+              />
             </div>
             <div className="cards cards--premium">
-              {newsItems.slice(0, 3).map((item, index) => (
-                <article key={item.slug} className={`card card--news fade-up delay-${(index % 3) + 1}`}>
+              {filteredLatestNews.slice(0, 6).map((item, index) => (
+                <a
+                  key={item.slug}
+                  href={`#/news/${item.slug}`}
+                  className={`card card--news card--news-link fade-up delay-${(index % 3) + 1}`}
+                >
+                  <img src={item.cover} alt={item.title} className="news-card__image" loading="lazy" />
                   <p className="meta">{item.date}</p>
                   <h3>{item.title}</h3>
                   <p>{item.excerpt}</p>
-                  <a className="btn btn--small btn--lux" href={`#/news/${item.slug}`}>
-                    قراءة كاملة
-                  </a>
-                </article>
+                  <span className="btn btn--small btn--lux">قراءة كاملة</span>
+                </a>
               ))}
             </div>
+            {filteredLatestNews.length === 0 ? (
+              <p className="empty-state">لا توجد نتائج مطابقة للفلاتر الحالية.</p>
+            ) : null}
           </section>
 
           <section className="section">
@@ -701,9 +826,14 @@ function App() {
 
               <div className="event-card__footer">
                 <span>إجمالي الصور: {event.photos.length}</span>
+                <span>السعر: {event.price}</span>
                 <button type="button" className="btn btn--small btn--lux">
                   حفظ للمراجعة
                 </button>
+              </div>
+              <div className="event-registration">
+                <h3>طريقة التسجيل</h3>
+                <p>{event.registration}</p>
               </div>
             </article>
           ))}
@@ -747,11 +877,44 @@ function App() {
           ← العودة إلى القسم
         </a>
         <article className="news-detail">
+          <img src={currentNews.cover} alt={currentNews.title} className="news-detail__cover" loading="lazy" />
+          <table className="news-table">
+            <tbody>
+              <tr>
+                <th scope="row">القسم</th>
+                <td>{newsSections.find((section) => section.id === currentNews.section)?.title ?? '—'}</td>
+              </tr>
+              <tr>
+                <th scope="row">التاريخ</th>
+                <td>{currentNews.date}</td>
+              </tr>
+              <tr>
+                <th scope="row">المصدر</th>
+                <td>{currentNews.reporter}</td>
+              </tr>
+              <tr>
+                <th scope="row">مدة القراءة</th>
+                <td>{currentNews.readTime}</td>
+              </tr>
+            </tbody>
+          </table>
           <p className="meta">{currentNews.date}</p>
           <h1>{currentNews.title}</h1>
           {currentNews.content.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          <div className="badges-row">
+            {currentNews.tags.map((tag) => (
+              <span key={tag} className="badge">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="news-detail__gallery">
+            {currentNews.gallery.map((imageUrl, index) => (
+              <img key={`${imageUrl}-${index}`} src={imageUrl} alt={`${currentNews.title} - ${index + 1}`} loading="lazy" />
+            ))}
+          </div>
 
           <div className="news-actions">
             <button
@@ -788,8 +951,107 @@ function App() {
     )
   }
 
+  function renderAdminDashboard() {
+    return (
+      <main className="container section-page fade-up">
+        <a className="back-link" href="#/">
+          ← العودة إلى الرئيسية
+        </a>
+        <section className="admin-panel">
+          <h1>Dashboard السوبر أدمن</h1>
+          <p>تخصيص سريع للسحب والاختيار حتى تبدّل شكل الموقع كامل بسهولة.</p>
+
+          <div className="admin-grid">
+            <article className="admin-card">
+              <h2>الثيمات الجاهزة</h2>
+              <div className="filter-chips">
+                {stylePresets.map((preset) => (
+                  <button
+                    key={preset.id}
+                    type="button"
+                    className={`chip ${themeVariant === preset.id ? 'chip--active' : ''}`}
+                    onClick={() => applyPreset(preset.id)}
+                  >
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            </article>
+
+            <article className="admin-card">
+              <h2>شكل الأزرار</h2>
+              <div className="filter-chips">
+                {buttonVariants.map((variant) => (
+                  <button
+                    key={variant.id}
+                    type="button"
+                    className={`chip ${buttonVariant === variant.id ? 'chip--active' : ''}`}
+                    onClick={() => setButtonVariant(variant.id)}
+                  >
+                    {variant.label}
+                  </button>
+                ))}
+              </div>
+            </article>
+
+            <article className="admin-card">
+              <h2>شكل البطاقات</h2>
+              <div className="filter-chips">
+                {cardVariants.map((variant) => (
+                  <button
+                    key={variant.id}
+                    type="button"
+                    className={`chip ${cardVariant === variant.id ? 'chip--active' : ''}`}
+                    onClick={() => setCardVariant(variant.id)}
+                  >
+                    {variant.label}
+                  </button>
+                ))}
+              </div>
+            </article>
+
+            <article className="admin-card">
+              <h2>الأبعاد (سحب)</h2>
+              <label className="admin-slider">
+                <span>استدارة العناصر: {adminRadius}px</span>
+                <input
+                  type="range"
+                  min="8"
+                  max="28"
+                  step="1"
+                  value={adminRadius}
+                  onChange={(event) => setAdminRadius(Number(event.target.value))}
+                />
+              </label>
+              <label className="admin-slider">
+                <span>كثافة المسافات: {adminGap.toFixed(2)}x</span>
+                <input
+                  type="range"
+                  min="0.85"
+                  max="1.2"
+                  step="0.01"
+                  value={adminGap}
+                  onChange={(event) => setAdminGap(Number(event.target.value))}
+                />
+              </label>
+            </article>
+          </div>
+        </section>
+      </main>
+    )
+  }
+
   return (
-    <div className="site" dir="rtl">
+    <div
+      className={`site ${selectedTheme.themeClass} ${selectedButtonClass} ${selectedCardClass}`}
+      style={
+        {
+          '--ui-radius': `${adminRadius}px`,
+          '--ui-gap-scale': adminGap,
+        }
+      }
+      dir="rtl"
+    >
       <header className="topbar">
         <div className="container topbar__inner">
           <a className="brand" href="#/">
@@ -815,30 +1077,33 @@ function App() {
             <a href="#/news-section/activities">الأخبار والأنشطة</a>
             <a href="#/news-section/latest-news">آخر الأخبار</a>
             <a href="#/events-gallery">معرض الفعاليات</a>
+            <a href="#/admin-dashboard">Dashboard</a>
             <a href="#/about">من نحن</a>
           </nav>
         </div>
       </header>
 
-      <section className="notification-strip">
-        <div className="container notification-strip__inner">
-          <p>
-            {notificationPermission === 'granted' && 'الإشعارات مفعّلة ✅'}
-            {notificationPermission === 'denied' && 'تم رفض الإشعارات. يمكنك تفعيلها من إعدادات المتصفح.'}
-            {notificationPermission === 'default' && 'فعّل الإشعارات للحصول على آخر الأخبار فور نشرها.'}
-            {notificationPermission === 'unsupported' && 'متصفحك لا يدعم إشعارات الويب.'}
-          </p>
-          {notificationPermission !== 'granted' && notificationPermission !== 'unsupported' ? (
-            <button type="button" className="btn btn--small btn--primary" onClick={requestNotifications}>
-              طلب إرسال إشعارات
-            </button>
-          ) : null}
-        </div>
-      </section>
+      {notificationPermission !== 'granted' ? (
+        <section className="notification-strip">
+          <div className="container notification-strip__inner">
+            <p>
+              {notificationPermission === 'denied' && 'تم رفض الإشعارات. يمكنك تفعيلها من إعدادات المتصفح.'}
+              {notificationPermission === 'default' && 'فعّل الإشعارات للحصول على آخر الأخبار فور نشرها.'}
+              {notificationPermission === 'unsupported' && 'متصفحك لا يدعم إشعارات الويب.'}
+            </p>
+            {notificationPermission !== 'unsupported' ? (
+              <button type="button" className="btn btn--small btn--primary" onClick={requestNotifications}>
+                طلب إرسال إشعارات
+              </button>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       {route.type === 'home' && renderHome()}
       {route.type === 'about' && renderAboutPage()}
       {route.type === 'events-gallery' && renderEventsGallery()}
+      {route.type === 'admin-dashboard' && renderAdminDashboard()}
       {route.type === 'news-section' && currentSection && renderNewsSectionPage()}
       {route.type === 'news' && currentNews && renderNewsDetail()}
 
