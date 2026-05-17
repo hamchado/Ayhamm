@@ -14,11 +14,11 @@ const services = [
   },
   {
     title: 'التعليم المستمر',
-    text: 'برامج تدريبية، ورش علمية، ونقاط CME لدعم التطور المهني للأطباء.',
+    text: 'برامج تدريبية وورش علمية لدعم التطور المهني للأطباء.',
   },
   {
     title: 'الخدمات النقابية',
-    text: 'إعلانات رسمية، تعاميم، نماذج، ودعم مهني مباشر لأعضاء الفرع.',
+    text: 'إعلانات رسمية، تعاميم، ونماذج إلكترونية للأعضاء.',
   },
 ]
 
@@ -26,11 +26,11 @@ const newsSections = [
   {
     id: 'latest-news',
     title: 'آخر الأخبار',
-    description: 'تغطية مستمرة لآخر مستجدات فرع اللاذقية.',
+    description: 'تغطية مستمرة لآخر مستجدات الفرع بصياغة مشابهة لقسم آخر الأخبار الرسمي.',
   },
   {
     id: 'activities',
-    title: 'الأنشطة والفعاليات',
+    title: 'الأخبار والأنشطة',
     description: 'ورش، مؤتمرات، ومحاضرات علمية في محافظة اللاذقية.',
   },
   {
@@ -42,39 +42,51 @@ const newsSections = [
 
 const newsItems = [
   {
-    slug: 'launch-cme-platform-lattakia',
+    slug: 'latest-syndicate-updates-may-2026',
     section: 'latest-news',
-    title: 'إطلاق بوابة التعليم الطبي المستمر لأطباء الأسنان في اللاذقية',
+    title: 'آخر الأخبار: تحديثات نقابية ومهنية لشهر أيار 2026',
     date: '15 أيار 2026',
-    excerpt: 'إطلاق منصة رقمية لتتبع الأنشطة العلمية والنقاط التدريبية بسهولة.',
+    excerpt: 'حزمة تحديثات جديدة لخدمات الأعضاء والبوابة الإلكترونية للنقابة.',
     content: [
-      'أعلنت نقابة أطباء الأسنان فرع اللاذقية إطلاق بوابة التعليم الطبي المستمر بصيغة رقمية حديثة، بهدف تسهيل وصول الأطباء إلى المحاضرات والدورات المعتمدة.',
-      'تتضمن البوابة سجلًا شخصيًا لكل طبيب يوضح النقاط العلمية المكتسبة، مع آلية واضحة لتحديث البيانات ومراجعتها بشكل دوري.',
-      'تدعو النقابة جميع الأطباء لتفعيل حساباتهم والاطلاع على الدليل الإرشادي المتاح ضمن قسم الأخبار.',
+      'تعلن نقابة أطباء الأسنان فرع اللاذقية عن مجموعة تحديثات جديدة تشمل تبسيط إجراءات المعاملات وتوسيع نافذة الخدمات الرقمية.',
+      'تشمل التحديثات تطوير قسم الأخبار ليعرض المحتوى بشكل أسرع مع صفحات تفصيلية لكل خبر وقابلية مشاركة مباشرة.',
+      'تدعو النقابة جميع الأطباء للاطلاع الدوري على قسم آخر الأخبار لمتابعة المستجدات الرسمية أولًا بأول.',
     ],
   },
   {
-    slug: 'summer-scientific-forum',
+    slug: 'scientific-activity-restorative-dentistry',
     section: 'activities',
-    title: 'الملتقى العلمي الصيفي لطب الأسنان الترميمي',
+    title: 'نشاط علمي حول أحدث بروتوكولات الترميم السني',
     date: '2 حزيران 2026',
-    excerpt: 'برنامج علمي مكثف حول بروتوكولات الترميم الحديثة.',
+    excerpt: 'برنامج علمي مكثف بمشاركة خبراء في طب الأسنان الترميمي.',
     content: [
-      'تنظم النقابة ملتقى علميًا صيفيًا يتضمن جلسات تخصصية تفاعلية بمشاركة نخبة من المحاضرين.',
-      'يركز الملتقى على التطبيقات السريرية الحديثة في طب الأسنان الترميمي والعلاج المحافظ.',
-      'يمنح المشاركون شهادة حضور ونقاط تعليم طبي مستمر وفق الأنظمة المعتمدة.',
+      'ينطلق النشاط العلمي ضمن خطة الفرع السنوية للتعليم المستمر، مع جلسات تطبيقية مركزة.',
+      'يركز البرنامج على القرارات السريرية الحديثة في الترميمات المحافظة والتعامل مع الحالات المعقدة.',
+      'يحصل المشاركون على شهادة حضور معتمدة ونقاط تعليم طبي مستمر.',
     ],
   },
   {
-    slug: 'membership-renewal-deadline',
+    slug: 'membership-renewal-final-notice',
     section: 'announcements',
-    title: 'تحديد آخر موعد لتجديد الاشتراك النقابي السنوي',
+    title: 'إعلان هام: الموعد النهائي لتجديد الاشتراك السنوي',
     date: '11 حزيران 2026',
-    excerpt: 'تنويه بخصوص المواعيد والإجراءات المطلوبة لتجديد الاشتراك.',
+    excerpt: 'تنويه رسمي بخصوص المواعيد والإجراءات المطلوبة لتجديد الاشتراك.',
     content: [
-      'تذكر النقابة السادة الأعضاء بآخر موعد لتجديد الاشتراك السنوي ضمن الفترة المحددة في الإعلان الرسمي.',
-      'يرجى استكمال الوثائق المطلوبة عبر مكتب شؤون الأطباء أو من خلال النماذج الإلكترونية المتاحة.',
-      'الالتزام بالمواعيد يضمن استمرارية الخدمات النقابية والاستفادة من البرامج المهنية.',
+      'تؤكد النقابة على ضرورة استكمال إجراءات تجديد الاشتراك ضمن المدة المحددة في التعميم الرسمي.',
+      'تُستقبل الطلبات عبر مكتب شؤون الأطباء أو عبر النماذج الإلكترونية المعتمدة.',
+      'الالتزام بالمواعيد يضمن استمرارية جميع الخدمات النقابية والمهنية.',
+    ],
+  },
+  {
+    slug: 'latest-news-digital-services-launch',
+    section: 'latest-news',
+    title: 'آخر الأخبار: إطلاق باقة خدمات رقمية جديدة',
+    date: '20 حزيران 2026',
+    excerpt: 'إطلاق نماذج رقمية جديدة لتسريع تقديم الطلبات والمتابعة.',
+    content: [
+      'أطلق الفرع مجموعة خدمات رقمية جديدة لتسهيل تقديم الطلبات النقابية دون الحاجة إلى مراجعات متعددة.',
+      'تساعد هذه الباقة في تسريع مسار المعاملات ورفع كفاءة التواصل بين الأعضاء والفرع.',
+      'يمكن الوصول إلى جميع الخدمات عبر البوابة الرسمية من قسم الأخبار والخدمات.',
     ],
   },
 ]
@@ -84,6 +96,8 @@ function getRoute() {
   if (!rawHash) return { type: 'home' }
 
   const hash = decodeURIComponent(rawHash)
+
+  if (hash === 'about') return { type: 'about' }
 
   if (hash.startsWith('news/')) {
     return { type: 'news', slug: hash.replace('news/', '') }
@@ -96,9 +110,9 @@ function getRoute() {
   return { type: 'home' }
 }
 
-function shareTo(platform) {
-  const pageUrl = encodeURIComponent(window.location.href)
-  const title = encodeURIComponent('نقابة أطباء الأسنان فرع اللاذقية')
+function shareTo(platform, targetUrl = window.location.href, targetTitle = 'نقابة أطباء الأسنان فرع اللاذقية') {
+  const pageUrl = encodeURIComponent(targetUrl)
+  const title = encodeURIComponent(targetTitle)
 
   const links = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
@@ -109,17 +123,54 @@ function shareTo(platform) {
 
   const url = links[platform]
   if (!url) return
-
   window.open(url, '_blank', 'noopener,noreferrer')
 }
 
 function App() {
   const [route, setRoute] = useState(getRoute())
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [showTopButton, setShowTopButton] = useState(false)
+  const [notificationPermission, setNotificationPermission] = useState(
+    typeof window !== 'undefined' && 'Notification' in window ? Notification.permission : 'unsupported',
+  )
 
   useEffect(() => {
-    const onHashChange = () => setRoute(getRoute())
+    const onHashChange = () => {
+      setRoute(getRoute())
+      setMenuOpen(false)
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
+    const onScroll = () => setShowTopButton(window.scrollY > 320)
+
     window.addEventListener('hashchange', onHashChange)
-    return () => window.removeEventListener('hashchange', onHashChange)
+    window.addEventListener('scroll', onScroll)
+
+    return () => {
+      window.removeEventListener('hashchange', onHashChange)
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
+
+  async function requestNotifications() {
+    if (!('Notification' in window)) {
+      setNotificationPermission('unsupported')
+      return
+    }
+
+    try {
+      const permission = await Notification.requestPermission()
+      setNotificationPermission(permission)
+    } catch {
+      setNotificationPermission('denied')
+    }
+  }
+
+  useEffect(() => {
+    if (notificationPermission === 'default') {
+      requestNotifications()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const currentNews = useMemo(
@@ -141,6 +192,206 @@ function App() {
     [currentSection],
   )
 
+  const newsIndex = useMemo(
+    () => (currentNews ? newsItems.findIndex((item) => item.slug === currentNews.slug) : -1),
+    [currentNews],
+  )
+
+  const previousNews = newsIndex > 0 ? newsItems[newsIndex - 1] : null
+  const nextNews = newsIndex >= 0 && newsIndex < newsItems.length - 1 ? newsItems[newsIndex + 1] : null
+
+  function renderHome() {
+    return (
+      <>
+        <section className="hero">
+          <div className="container hero__grid">
+            <div className="fade-up">
+              <p className="eyebrow">هوية رسمية حديثة</p>
+              <h1>بوابة نقابية متكاملة لأطباء الأسنان في محافظة اللاذقية</h1>
+              <p className="hero__text">
+                منصة رسمية بهوية أخضر/ذهبي، مع أقسام واضحة: الرئيسية، الأخبار والأنشطة، آخر
+                الأخبار، ومن نحن.
+              </p>
+              <div className="hero__actions">
+                <a href="#/news-section/activities" className="btn btn--primary">
+                  الأخبار والأنشطة
+                </a>
+                <a href="#/news-section/latest-news" className="btn btn--ghost">
+                  آخر الأخبار
+                </a>
+                <a href="#/about" className="btn btn--ghost">
+                  من نحن
+                </a>
+              </div>
+            </div>
+
+            <div className="hero__panel fade-up delay-1">
+              <h2>مؤشرات الفرع</h2>
+              <div className="metrics">
+                {highlights.map((item) => (
+                  <div key={item.label} className="metric hover-lift">
+                    <p>{item.value}</p>
+                    <small>{item.label}</small>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <main className="container">
+          <section className="section">
+            <div className="section__head fade-up">
+              <h2>الخدمات الرئيسية</h2>
+              <p>إدارة متكاملة للخدمات المهنية والإدارية ضمن واجهة موحدة.</p>
+            </div>
+            <div className="cards">
+              {services.map((service, index) => (
+                <article key={service.title} className={`card hover-lift fade-up delay-${(index % 3) + 1}`}>
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="section">
+            <div className="section__head fade-up">
+              <h2>الأقسام</h2>
+              <p>توجيه مباشر وسريع للأقسام الأساسية.</p>
+            </div>
+            <div className="cards">
+              <article className="card hover-lift">
+                <h3>الرئيسية</h3>
+                <p>الواجهة العامة والملخص السريع للخدمات.</p>
+                <a className="link" href="#/">
+                  الذهاب إلى الرئيسية
+                </a>
+              </article>
+              <article className="card hover-lift">
+                <h3>الأخبار والأنشطة</h3>
+                <p>جميع الأخبار المتعلقة بالأنشطة العلمية والفعاليات.</p>
+                <a className="link" href="#/news-section/activities">
+                  فتح الأخبار والأنشطة
+                </a>
+              </article>
+              <article className="card hover-lift">
+                <h3>آخر الأخبار</h3>
+                <p>آخر الأخبار المحدثة بصياغة مشابهة للقسم المرجعي.</p>
+                <a className="link" href="#/news-section/latest-news">
+                  فتح آخر الأخبار
+                </a>
+              </article>
+            </div>
+          </section>
+        </main>
+      </>
+    )
+  }
+
+  function renderNewsSectionPage() {
+    if (!currentSection) return null
+
+    return (
+      <main className="container section-page fade-up">
+        <a className="back-link" href="#/">
+          ← العودة إلى الرئيسية
+        </a>
+        <h1>{currentSection.title}</h1>
+        <p className="section-description">{currentSection.description}</p>
+
+        <div className="timeline">
+          {sectionNews.map((item, index) => (
+            <article key={item.slug} className={`timeline__item hover-lift fade-up delay-${(index % 3) + 1}`}>
+              <p className="meta">{item.date}</p>
+              <h3>{item.title}</h3>
+              <p>{item.excerpt}</p>
+              <a className="btn btn--small" href={`#/news/${item.slug}`}>
+                قراءة الخبر
+              </a>
+            </article>
+          ))}
+        </div>
+      </main>
+    )
+  }
+
+  function renderAboutPage() {
+    return (
+      <main className="container section-page fade-up">
+        <a className="back-link" href="#/">
+          ← العودة إلى الرئيسية
+        </a>
+        <article className="news-detail">
+          <h1>من نحن</h1>
+          <p>
+            نقابة أطباء الأسنان فرع اللاذقية هي المظلة المهنية الرسمية التي تمثل أطباء الأسنان في
+            المحافظة، وتعمل على تنظيم المهنة، تطوير المهارات، وخدمة المجتمع.
+          </p>
+          <p>
+            نلتزم بتقديم خدمات نقابية حديثة، وتعزيز التعليم المستمر، ودعم الممارسة المهنية الآمنة
+            وفق المعايير المعتمدة.
+          </p>
+          <p>
+            تعتمد المنصة الحالية شعارًا مؤقتًا وهوية بصرية باللونين الأخضر والذهبي إلى حين اعتماد
+            الهوية النهائية.
+          </p>
+        </article>
+      </main>
+    )
+  }
+
+  function renderNewsDetail() {
+    if (!currentNews) return null
+    const newsUrl = `${window.location.origin}${window.location.pathname}#/news/${currentNews.slug}`
+
+    return (
+      <main className="container section-page fade-up">
+        <a className="back-link" href={`#/news-section/${currentNews.section}`}>
+          ← العودة إلى القسم
+        </a>
+        <article className="news-detail">
+          <p className="meta">{currentNews.date}</p>
+          <h1>{currentNews.title}</h1>
+          {currentNews.content.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+
+          <div className="news-actions">
+            <button
+              type="button"
+              className="btn btn--small"
+              onClick={() => shareTo('whatsapp', newsUrl, currentNews.title)}
+            >
+              مشاركة الخبر
+            </button>
+            <a className="btn btn--small btn--ghost" href={`#/news-section/${currentNews.section}`}>
+              المزيد من نفس القسم
+            </a>
+          </div>
+
+          <div className="pager">
+            {previousNews ? (
+              <a className="pager__link" href={`#/news/${previousNews.slug}`}>
+                السابق: {previousNews.title}
+              </a>
+            ) : (
+              <span className="pager__empty">لا يوجد خبر سابق</span>
+            )}
+
+            {nextNews ? (
+              <a className="pager__link" href={`#/news/${nextNews.slug}`}>
+                التالي: {nextNews.title}
+              </a>
+            ) : (
+              <span className="pager__empty">لا يوجد خبر لاحق</span>
+            )}
+          </div>
+        </article>
+      </main>
+    )
+  }
+
   return (
     <div className="site" dir="rtl">
       <header className="topbar">
@@ -151,162 +402,68 @@ function App() {
             </span>
             <strong>نقابة أطباء الأسنان فرع اللاذقية</strong>
           </a>
-          <nav>
+
+          <button
+            type="button"
+            className={`burger ${menuOpen ? 'active' : ''}`}
+            aria-label="فتح قائمة التنقل"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav className={`nav ${menuOpen ? 'open' : ''}`}>
             <a href="#/">الرئيسية</a>
-            <a href="#services">الخدمات</a>
-            <a href="#news-anchor">الأخبار</a>
-            <a href="#about">عن النقابة</a>
+            <a href="#/news-section/activities">الأخبار والأنشطة</a>
+            <a href="#/news-section/latest-news">آخر الأخبار</a>
+            <a href="#/about">من نحن</a>
           </nav>
         </div>
       </header>
 
-      {route.type === 'home' && (
-        <>
-          <section className="hero">
-            <div className="container hero__grid">
-              <div>
-                <p className="eyebrow">هوية رسمية حديثة</p>
-                <h1>بوابة نقابية متكاملة لأطباء الأسنان في محافظة اللاذقية</h1>
-                <p className="hero__text">
-                  منصة رقمية احترافية بهوية بصرية أخضر/ذهبي، لتنظيم الخدمات النقابية، الأخبار،
-                  والأنشطة العلمية ضمن تجربة استخدام واضحة ومتناسقة.
-                </p>
-                <div className="hero__actions">
-                  <a href="#services" className="btn btn--primary">
-                    الخدمات الرئيسية
-                  </a>
-                  <a href="#news-anchor" className="btn btn--ghost">
-                    آخر الأخبار
-                  </a>
-                </div>
-              </div>
-              <div className="hero__panel">
-                <h2>مؤشرات الفرع</h2>
-                <div className="metrics">
-                  {highlights.map((item) => (
-                    <div key={item.label} className="metric">
-                      <p>{item.value}</p>
-                      <small>{item.label}</small>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
+      <section className="notification-strip">
+        <div className="container notification-strip__inner">
+          <p>
+            {notificationPermission === 'granted' && 'الإشعارات مفعّلة ✅'}
+            {notificationPermission === 'denied' && 'تم رفض الإشعارات. يمكنك تفعيلها من إعدادات المتصفح.'}
+            {notificationPermission === 'default' && 'للحصول على آخر الأخبار فورًا، فعّل الإشعارات.'}
+            {notificationPermission === 'unsupported' && 'متصفحك لا يدعم إشعارات الويب.'}
+          </p>
+          {notificationPermission !== 'granted' && notificationPermission !== 'unsupported' ? (
+            <button type="button" className="btn btn--small" onClick={requestNotifications}>
+              طلب إرسال إشعارات
+            </button>
+          ) : null}
+        </div>
+      </section>
 
-          <main className="container">
-            <section id="services" className="section">
-              <div className="section__head">
-                <h2>الخدمات الرئيسية</h2>
-                <p>إدارة متكاملة للخدمات المهنية والإدارية ضمن واجهة موحدة.</p>
-              </div>
-              <div className="cards">
-                {services.map((service) => (
-                  <article key={service.title} className="card">
-                    <h3>{service.title}</h3>
-                    <p>{service.text}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section id="news-anchor" className="section">
-              <div className="section__head">
-                <h2>الأخبار</h2>
-                <p>اختر قسمًا إخباريًا أو افتح تفاصيل أي خبر مباشرة.</p>
-              </div>
-
-              <div className="cards">
-                {newsSections.map((section) => (
-                  <article key={section.id} className="card">
-                    <h3>{section.title}</h3>
-                    <p>{section.description}</p>
-                    <a className="link" href={`#/news-section/${section.id}`}>
-                      عرض القسم
-                    </a>
-                  </article>
-                ))}
-              </div>
-
-              <div className="timeline">
-                {newsItems.map((item) => (
-                  <article key={item.slug} className="timeline__item">
-                    <p className="meta">{item.date}</p>
-                    <h3>{item.title}</h3>
-                    <p>{item.excerpt}</p>
-                    <a className="link" href={`#/news/${item.slug}`}>
-                      قراءة الخبر
-                    </a>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section id="about" className="section about">
-              <h2>عن النقابة</h2>
-              <p>
-                تمثل نقابة أطباء الأسنان فرع اللاذقية الإطار المهني المنظم لعمل الأطباء، وتدعم
-                التطوير العلمي، الممارسة الآمنة، وخدمة المجتمع.
-              </p>
-              <p>
-                تم اعتماد تصميم أصلي وهوية بصرية مستقلة تتماشى مع الطابع الرسمي للنقابة وتُسهّل
-                التعديل المستقبلي السريع للمحتوى والأقسام.
-              </p>
-            </section>
-          </main>
-        </>
-      )}
-
-      {route.type === 'news-section' && currentSection && (
-        <main className="container section-page">
-          <a className="back-link" href="#/">
-            ← العودة إلى الرئيسية
-          </a>
-          <h1>{currentSection.title}</h1>
-          <p className="section-description">{currentSection.description}</p>
-
-          <div className="timeline">
-            {sectionNews.map((item) => (
-              <article key={item.slug} className="timeline__item">
-                <p className="meta">{item.date}</p>
-                <h3>{item.title}</h3>
-                <p>{item.excerpt}</p>
-                <a className="link" href={`#/news/${item.slug}`}>
-                  قراءة الخبر
-                </a>
-              </article>
-            ))}
-          </div>
-        </main>
-      )}
-
-      {route.type === 'news' && currentNews && (
-        <main className="container section-page">
-          <a className="back-link" href="#/">
-            ← العودة إلى الرئيسية
-          </a>
-          <article className="news-detail">
-            <p className="meta">{currentNews.date}</p>
-            <h1>{currentNews.title}</h1>
-            {currentNews.content.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-            <a className="link" href={`#/news-section/${currentNews.section}`}>
-              عرض المزيد من نفس القسم
-            </a>
-          </article>
-        </main>
-      )}
+      {route.type === 'home' && renderHome()}
+      {route.type === 'about' && renderAboutPage()}
+      {route.type === 'news-section' && currentSection && renderNewsSectionPage()}
+      {route.type === 'news' && currentNews && renderNewsDetail()}
 
       {(route.type === 'news' && !currentNews) ||
       (route.type === 'news-section' && !currentSection) ? (
-        <main className="container section-page">
+        <main className="container section-page fade-up">
           <a className="back-link" href="#/">
             ← العودة إلى الرئيسية
           </a>
           <h1>المحتوى غير متوفر</h1>
           <p>الصفحة المطلوبة غير موجودة أو تم نقلها.</p>
         </main>
+      ) : null}
+
+      {showTopButton ? (
+        <button
+          type="button"
+          className="to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="العودة إلى الأعلى"
+        >
+          ↑
+        </button>
       ) : null}
 
       <footer className="footer">
