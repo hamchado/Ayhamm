@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
 :root {
   font-family: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
   line-height: 1.6;
@@ -6,16 +8,28 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --brand-primary: #0f2942;
+  --brand-accent: #1f6fb6;
+  --brand-soft: #d7e8ff;
+  --surface-bg: #f7f9fc;
+  --surface-card: #ffffff;
+  --text-main: #1b2737;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-width: 320px;
-  background: #f7f9fc;
+  background: var(--surface-bg);
+  color: var(--text-main);
 }
 
 img {
