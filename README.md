@@ -1,33 +1,33 @@
-# Ayhamm
+# Latakia Dental Syndicate Branch
 
-تطبيق مبني بـ **React + Vite + Capacitor** مع بناء تلقائي للويب وAndroid عبر GitHub Actions.
+Official web/mobile project for **Latakia Dental Syndicate Branch**, built with **React + Vite + Capacitor**.
 
-## المتطلبات
+## Requirements
 
-- Node.js **22** أو أحدث
+- Node.js **22+**
 - npm
-- Java 21 (لبناء Android)
+- Java 21 (for Android build)
 
-## التثبيت
+## Install
 
 ```bash
 npm ci
 ```
 
-## أوامر المشروع
+## Run locally
 
 ```bash
-# تشغيل محلي
 npm run dev
+```
 
-# فحص الكود
+## Validate and build
+
+```bash
 npm run lint
-
-# بناء نسخة الإنتاج (ويب)
 npm run build
 ```
 
-## بناء Android محليًا
+## Build Android APK
 
 ```bash
 npm run build
@@ -36,17 +36,11 @@ cd android
 ./gradlew assembleRelease
 ```
 
-ملف APK الناتج:
+APK output:
 
 `android/app/build/outputs/apk/release/app-release.apk`
 
 ## GitHub Actions
 
-- `deploy-pages.yml`: بناء ونشر الموقع على GitHub Pages.
-- `build-android.yml` (ومثله `main.yml`, `maein.yml`): بناء APK تلقائيًا على فرع `develop-uat`.
-
-## GitHub Pages
-
-بعد تفعيل Pages في إعدادات المستودع (Build and deployment: **GitHub Actions**) سيُنشر الموقع على:
-
-`https://hamchado.github.io/Ayhamm/`
+- `deploy-pages.yml`: builds and deploys web app to GitHub Pages
+- `build-android.yml`, `main.yml`, `maein.yml`: build Android release APK on `develop-uat`

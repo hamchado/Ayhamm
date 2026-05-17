@@ -1,5 +1,5 @@
-name: "Build Android App"
-run-name: ${{ github.actor }} is learning build Android App using Github Actions
+name: "Build Latakia Dental Syndicate Branch Android App"
+run-name: ${{ github.actor }} triggered Android build for Latakia Dental Syndicate Branch
 on: 
   push:
     branches:

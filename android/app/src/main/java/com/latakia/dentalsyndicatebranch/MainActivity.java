@@ -1,4 +1,4 @@
-package com.ayham.hamchado;
+package com.latakia.dentalsyndicatebranch;
 
 import com.getcapacitor.BridgeActivity;
 

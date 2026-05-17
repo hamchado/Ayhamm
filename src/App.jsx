@@ -43,7 +43,7 @@ const trainings = [
 
 function shareTo(platform) {
   const pageUrl = encodeURIComponent(window.location.href)
-  const title = encodeURIComponent('نقابة أطباء الأسنان - فرع اللاذقية')
+  const title = encodeURIComponent('Latakia Dental Syndicate Branch')
 
   const links = {
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
@@ -71,7 +71,7 @@ function App() {
         <div className="hero__overlay" />
         <div className="hero__content">
           <p className="badge">الجمهورية العربية السورية</p>
-          <h1>نقابة أطباء الأسنان - فرع اللاذقية</h1>
+          <h1>Latakia Dental Syndicate Branch</h1>
           <p>
             منصة إلكترونية لنشر الأخبار المهنية، الفعاليات العلمية، والمؤتمرات الخاصة
             بأطباء الأسنان في محافظة اللاذقية.
@@ -174,7 +174,7 @@ function App() {
             X
           </button>
         </div>
-        <small>© 2026 نقابة أطباء الأسنان - فرع اللاذقية</small>
+        <small>© 2026 Latakia Dental Syndicate Branch</small>
       </footer>
     </div>
   )
