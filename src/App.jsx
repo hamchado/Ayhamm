@@ -1,43 +1,50 @@
 import './App.css'
 
-const posts = [
+const highlights = [
   {
-    title: 'تحديث النقابة: تنظيم الترخيص المهني',
-    date: '15 أيار 2026',
-    image:
-      'https://images.unsplash.com/photo-1588776814546-ec7e89f0d4f1?auto=format&fit=crop&w=1200&q=80',
-    text: 'تعلن نقابة أطباء الأسنان - فرع اللاذقية عن بدء استقبال طلبات تجديد التراخيص المهنية وفق التعليمات الجديدة المعتمدة من مجلس النقابة المركزي.',
+    value: '2,850+',
+    label: 'طبيب أسنان مسجل',
   },
   {
-    title: 'إطلاق حملة صحة الفم المدرسية',
-    date: '8 أيار 2026',
-    image:
-      'https://images.unsplash.com/photo-1588774069162-1327f4f2f67f?auto=format&fit=crop&w=1200&q=80',
-    text: 'بالتعاون مع مديرية التربية في اللاذقية، تبدأ النقابة حملة توعوية في المدارس حول الوقاية من تسوس الأسنان والعناية اليومية بصحة الفم.',
+    value: '48',
+    label: 'نشاط علمي سنويًا',
+  },
+  {
+    value: '14',
+    label: 'لجنة تخصصية',
   },
 ]
 
-const trainings = [
+const services = [
   {
-    title: 'دورة معالجة الجذور المتقدمة',
-    date: '22 حزيران 2026',
-    place: 'قاعة النقابة - اللاذقية',
-    image:
-      'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80',
+    title: 'شؤون الأطباء',
+    text: 'إدارة التسجيل والترخيص وتجديد العضوية مع مسار رقمي واضح وسريع.',
   },
   {
-    title: 'ورشة التركيبات الرقمية CAD/CAM',
-    date: '4 تموز 2026',
-    place: 'مركز التدريب الطبي',
-    image:
-      'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80',
+    title: 'التطوير العلمي',
+    text: 'برامج تدريبية متقدمة ومحاضرات دورية بالشراكة مع خبراء محليين ودوليين.',
   },
   {
-    title: 'المؤتمر السنوي لصحة الفم',
-    date: '19 آب 2026',
-    place: 'فندق لاميرا - اللاذقية',
-    image:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1200&q=80',
+    title: 'التوعية المجتمعية',
+    text: 'مبادرات صحية موجهة للمدارس والأحياء لتعزيز صحة الفم والأسنان.',
+  },
+]
+
+const events = [
+  {
+    date: '10 حزيران 2026',
+    title: 'الملتقى العلمي الصيفي',
+    text: 'جلسات تخصصية تفاعلية حول علاجات الأسنان المحافظة والتجميلية.',
+  },
+  {
+    date: '26 تموز 2026',
+    title: 'ورشة إدارة العيادات',
+    text: 'أدوات عملية لتنظيم الجودة، الملفات الطبية، وتجربة المريض.',
+  },
+  {
+    date: '18 أيلول 2026',
+    title: 'المؤتمر المهني السنوي',
+    text: 'لقاء مهني موسع لتبادل الخبرات وعرض أحدث التطبيقات السريرية.',
   },
 ]
 
@@ -59,107 +66,98 @@ function shareTo(platform) {
 }
 
 function App() {
-  const monthlySchedule = [
-    { day: 'الأحد', activity: 'استقبال طلبات الانتساب', time: '09:00 - 12:00' },
-    { day: 'الثلاثاء', activity: 'استشارات مهنية للأطباء الجدد', time: '10:00 - 13:00' },
-    { day: 'الخميس', activity: 'ندوة توعوية مفتوحة للأهالي', time: '11:00 - 14:00' },
-  ]
-
   return (
     <div className="site" dir="rtl">
-      <header className="hero">
-        <div className="hero__overlay" />
-        <div className="hero__content">
-          <p className="badge">الجمهورية العربية السورية</p>
-          <h1>Latakia Dental Syndicate Branch</h1>
-          <p>
-            منصة إلكترونية لنشر الأخبار المهنية، الفعاليات العلمية، والمؤتمرات الخاصة
-            بأطباء الأسنان في محافظة اللاذقية.
-          </p>
-          <nav className="hero__nav">
-            <a href="#posts">المنشورات</a>
-            <a href="#gallery">المعرض</a>
-            <a href="#about">من نحن</a>
+      <header className="topbar">
+        <div className="container topbar__inner">
+          <strong>نقابة أطباء الأسنان - فرع اللاذقية</strong>
+          <nav>
+            <a href="#services">الخدمات</a>
+            <a href="#events">الفعاليات</a>
+            <a href="#about">عن النقابة</a>
           </nav>
         </div>
       </header>
 
-      <main className="container">
-        <section id="posts" className="section">
-          <h2>المنشورات</h2>
-          <div className="grid two">
-            {posts.map((post) => (
-              <article key={post.title} className="card">
-                <img src={post.image} alt={post.title} className="card__image" />
-                <div className="card__body">
-                  <p className="meta">{post.date}</p>
-                  <h3>{post.title}</h3>
-                  <p>{post.text}</p>
+      <section className="hero">
+        <div className="container hero__grid">
+          <div>
+            <p className="eyebrow">هوية رقمية حديثة</p>
+            <h1>بوابة مهنية متكاملة لخدمة أطباء الأسنان في اللاذقية</h1>
+            <p className="hero__text">
+              تصميم بصري جديد بنمط رسمي وعملي، يركّز على وضوح المحتوى وسهولة الوصول
+              للخدمات والفعاليات العلمية.
+            </p>
+            <div className="hero__actions">
+              <a href="#services" className="btn btn--primary">
+                استكشف الخدمات
+              </a>
+              <a href="#events" className="btn btn--ghost">
+                جدول الفعاليات
+              </a>
+            </div>
+          </div>
+          <div className="hero__panel">
+            <h2>مؤشرات سريعة</h2>
+            <div className="metrics">
+              {highlights.map((item) => (
+                <div key={item.label} className="metric">
+                  <p>{item.value}</p>
+                  <small>{item.label}</small>
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <main className="container">
+        <section id="services" className="section">
+          <div className="section__head">
+            <h2>الخدمات الرئيسية</h2>
+            <p>تنظيم مهني متكامل يربط الطبيب بالنقابة عبر واجهة واضحة وسريعة.</p>
+          </div>
+          <div className="cards">
+            {services.map((service) => (
+              <article key={service.title} className="card">
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
               </article>
             ))}
           </div>
-
-          <article className="card table-card">
-            <div className="card__body">
-              <h3>جدول الفعاليات النقابية الأسبوعي</h3>
-              <p>يُحدّث هذا الجدول بشكل دوري لمتابعة مواعيد النشاطات المهنية والتوعوية.</p>
-              <div className="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>اليوم</th>
-                      <th>النشاط</th>
-                      <th>الوقت</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {monthlySchedule.map((item) => (
-                      <tr key={item.day}>
-                        <td>{item.day}</td>
-                        <td>{item.activity}</td>
-                        <td>{item.time}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </article>
         </section>
 
-        <section id="gallery" className="section">
-          <h2>معرض الدورات التدريبية والمؤتمرات</h2>
-          <div className="grid three">
-            {trainings.map((item) => (
-              <article key={item.title} className="card">
-                <img src={item.image} alt={item.title} className="card__image" />
-                <div className="card__body">
-                  <h3>{item.title}</h3>
-                  <p className="meta">{item.date}</p>
-                  <p>{item.place}</p>
-                </div>
+        <section id="events" className="section">
+          <div className="section__head">
+            <h2>أجندة الفعاليات</h2>
+            <p>برنامج موسمي متجدد للدورات والمؤتمرات والملتقيات العلمية.</p>
+          </div>
+          <div className="timeline">
+            {events.map((event) => (
+              <article key={event.title} className="timeline__item">
+                <p className="meta">{event.date}</p>
+                <h3>{event.title}</h3>
+                <p>{event.text}</p>
               </article>
             ))}
           </div>
         </section>
 
         <section id="about" className="section about">
-          <h2>من نحن</h2>
+          <h2>عن النقابة</h2>
           <p>
-            نقابة أطباء الأسنان - فرع اللاذقية جهة مهنية تعنى بتنظيم شؤون المهنة، دعم
-            التطوير العلمي المستمر، وتمثيل أطباء الأسنان في المحافظة.
+            مؤسسة مهنية تُعنى بتمثيل أطباء الأسنان وتطوير بيئة العمل العلمي والخدمي
+            بما ينسجم مع احتياجات المجتمع والمنظومة الصحية.
           </p>
-          <ul>
-            <li>تطوير الكفاءة المهنية عبر الدورات وورش العمل.</li>
-            <li>تعزيز التواصل بين الأطباء والمؤسسات الصحية.</li>
-            <li>نشر التوعية المجتمعية حول صحة الفم والأسنان.</li>
-          </ul>
+          <p>
+            تعتمد الهوية البصرية الجديدة على طابع رسمي حديث مختلف، مع ألوان هادئة
+            وتخطيط واضح يعزز تجربة المستخدم ويحافظ على استقلالية التصميم.
+          </p>
         </section>
       </main>
 
       <footer className="footer">
-        <p>شارك الموقع عبر وسائل التواصل الاجتماعي</p>
+        <p>شارك البوابة عبر وسائل التواصل</p>
         <div className="share-buttons">
           <button type="button" onClick={() => shareTo('facebook')}>
             Facebook
@@ -174,7 +172,7 @@ function App() {
             X
           </button>
         </div>
-        <small>© 2026 Latakia Dental Syndicate Branch</small>
+        <small>© 2026 نقابة أطباء الأسنان - فرع اللاذقية</small>
       </footer>
     </div>
   )
