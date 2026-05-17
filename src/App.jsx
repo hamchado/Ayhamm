@@ -5,20 +5,29 @@ const highlights = [
   { value: '3,100+', label: 'طبيب وطبيبة أسنان' },
   { value: '52', label: 'نشاط علمي سنوي' },
   { value: '17', label: 'لجنة تخصصية' },
+  { value: '24/7', label: 'تحديثات رقمية مستمرة' },
 ]
 
 const services = [
   {
+    icon: '🧾',
     title: 'التسجيل والترخيص',
-    text: 'متابعة معاملات الانتساب وتجديد الترخيص عبر مسار واضح ومنظم.',
+    text: 'متابعة معاملات الانتساب وتجديد الترخيص بمسار واضح وتتبّع مبسط.',
   },
   {
+    icon: '🎓',
     title: 'التعليم المستمر',
-    text: 'برامج تدريبية وورش علمية لدعم التطور المهني للأطباء.',
+    text: 'ورش ودورات علمية تفاعلية مع نقاط CME ضمن خطة تدريب سنوية.',
   },
   {
+    icon: '📣',
     title: 'الخدمات النقابية',
-    text: 'إعلانات رسمية، تعاميم، ونماذج إلكترونية للأعضاء.',
+    text: 'إعلانات وتعاميم ونماذج إلكترونية ضمن تجربة استخدام أسرع.',
+  },
+  {
+    icon: '🛡️',
+    title: 'الدعم المهني',
+    text: 'مساندة مهنية للأعضاء في القضايا النقابية والإجرائية اليومية.',
   },
 ]
 
@@ -26,17 +35,17 @@ const newsSections = [
   {
     id: 'latest-news',
     title: 'آخر الأخبار',
-    description: 'تغطية مستمرة لآخر مستجدات الفرع بصياغة مشابهة لقسم آخر الأخبار الرسمي.',
+    description: 'تحديثات فورية بأسلوب موجز وواضح مشابه لنمط البوابات الرسمية الكبيرة.',
   },
   {
     id: 'activities',
     title: 'الأخبار والأنشطة',
-    description: 'ورش، مؤتمرات، ومحاضرات علمية في محافظة اللاذقية.',
+    description: 'تغطية الأنشطة العلمية، الورش، المؤتمرات، والفعاليات المهنية.',
   },
   {
     id: 'announcements',
     title: 'الإعلانات النقابية',
-    description: 'إعلانات وتنويهات إدارية ومهنية للأعضاء.',
+    description: 'تنويهات إدارية ومهنية مهمة للأعضاء مع وصول سريع للتفاصيل.',
   },
 ]
 
@@ -49,7 +58,7 @@ const newsItems = [
     excerpt: 'حزمة تحديثات جديدة لخدمات الأعضاء والبوابة الإلكترونية للنقابة.',
     content: [
       'تعلن نقابة أطباء الأسنان فرع اللاذقية عن مجموعة تحديثات جديدة تشمل تبسيط إجراءات المعاملات وتوسيع نافذة الخدمات الرقمية.',
-      'تشمل التحديثات تطوير قسم الأخبار ليعرض المحتوى بشكل أسرع مع صفحات تفصيلية لكل خبر وقابلية مشاركة مباشرة.',
+      'تشمل التحديثات تحسين عرض الأخبار لتكون القراءة أسرع مع تفاصيل منظمة وروابط مشاركة مباشرة.',
       'تدعو النقابة جميع الأطباء للاطلاع الدوري على قسم آخر الأخبار لمتابعة المستجدات الرسمية أولًا بأول.',
     ],
   },
@@ -91,6 +100,84 @@ const newsItems = [
   },
 ]
 
+const galleryCategories = [
+  { id: 'all', label: 'كل الأقسام' },
+  { id: 'scientific', label: 'علمي' },
+  { id: 'community', label: 'مجتمعي' },
+  { id: 'training', label: 'تدريبي' },
+  { id: 'conference', label: 'مؤتمرات' },
+]
+
+const dayFilters = [
+  { id: 'all', label: 'كل المدد' },
+  { id: '1', label: 'فعالية يوم واحد' },
+  { id: '2-3', label: 'من 2 إلى 3 أيام' },
+  { id: '4+', label: '4 أيام وأكثر' },
+]
+
+const events = [
+  {
+    id: 'summer-forum-2026',
+    title: 'الملتقى الصيفي المتقدم لطب الأسنان الترميمي',
+    category: 'scientific',
+    categoryLabel: 'علمي',
+    days: 3,
+    date: '10-12 تموز 2026',
+    location: 'قاعة المؤتمرات - اللاذقية',
+    description: 'جلسات علمية مكثفة مع تطبيقات سريرية مباشرة وحالات تفاعلية.',
+    photos: [
+      'https://picsum.photos/seed/summer-forum-1/900/600',
+      'https://picsum.photos/seed/summer-forum-2/900/600',
+      'https://picsum.photos/seed/summer-forum-3/900/600',
+    ],
+  },
+  {
+    id: 'volunteer-dental-week',
+    title: 'أسبوع العيادات التطوعية لخدمة المجتمع',
+    category: 'community',
+    categoryLabel: 'مجتمعي',
+    days: 5,
+    date: '18-22 آب 2026',
+    location: 'عدة مراكز مجتمعية - اللاذقية',
+    description: 'مبادرة مجتمعية تقدم فحوصات وتوعية صحية في عدة أحياء.',
+    photos: [
+      'https://picsum.photos/seed/community-week-1/900/600',
+      'https://picsum.photos/seed/community-week-2/900/600',
+      'https://picsum.photos/seed/community-week-3/900/600',
+    ],
+  },
+  {
+    id: 'digital-workflow-bootcamp',
+    title: 'معسكر العمل الرقمي لعيادات الأسنان',
+    category: 'training',
+    categoryLabel: 'تدريبي',
+    days: 2,
+    date: '3-4 أيلول 2026',
+    location: 'مركز التدريب النقابي',
+    description: 'تدريب عملي على إدارة مواعيد المرضى والملفات الطبية رقمياً.',
+    photos: [
+      'https://picsum.photos/seed/bootcamp-1/900/600',
+      'https://picsum.photos/seed/bootcamp-2/900/600',
+      'https://picsum.photos/seed/bootcamp-3/900/600',
+    ],
+  },
+  {
+    id: 'regional-conference-innovation',
+    title: 'المؤتمر الإقليمي لابتكارات طب الأسنان',
+    category: 'conference',
+    categoryLabel: 'مؤتمرات',
+    days: 1,
+    date: '20 تشرين الأول 2026',
+    location: 'مدينة المعارض - اللاذقية',
+    description: 'جلسات رئيسية ومعرض تقنيات حديثة من شركات ومراكز تدريب.',
+    photos: [
+      'https://picsum.photos/seed/conference-1/900/600',
+      'https://picsum.photos/seed/conference-2/900/600',
+      'https://picsum.photos/seed/conference-3/900/600',
+    ],
+  },
+]
+
 function getRoute() {
   const rawHash = window.location.hash.replace(/^#\/?/, '')
   if (!rawHash) return { type: 'home' }
@@ -98,6 +185,7 @@ function getRoute() {
   const hash = decodeURIComponent(rawHash)
 
   if (hash === 'about') return { type: 'about' }
+  if (hash === 'events-gallery') return { type: 'events-gallery' }
 
   if (hash.startsWith('news/')) {
     return { type: 'news', slug: hash.replace('news/', '') }
@@ -130,6 +218,8 @@ function App() {
   const [route, setRoute] = useState(getRoute())
   const [menuOpen, setMenuOpen] = useState(false)
   const [showTopButton, setShowTopButton] = useState(false)
+  const [galleryCategory, setGalleryCategory] = useState('all')
+  const [galleryDays, setGalleryDays] = useState('all')
   const [notificationPermission, setNotificationPermission] = useState(
     typeof window !== 'undefined' && 'Notification' in window ? Notification.permission : 'unsupported',
   )
@@ -190,27 +280,41 @@ function App() {
     [currentNews],
   )
 
+  const filteredEvents = useMemo(() => {
+    return events.filter((event) => {
+      const byCategory = galleryCategory === 'all' || event.category === galleryCategory
+
+      const byDays =
+        galleryDays === 'all' ||
+        (galleryDays === '1' && event.days === 1) ||
+        (galleryDays === '2-3' && event.days >= 2 && event.days <= 3) ||
+        (galleryDays === '4+' && event.days >= 4)
+
+      return byCategory && byDays
+    })
+  }, [galleryCategory, galleryDays])
+
   const previousNews = newsIndex > 0 ? newsItems[newsIndex - 1] : null
   const nextNews = newsIndex >= 0 && newsIndex < newsItems.length - 1 ? newsItems[newsIndex + 1] : null
 
   function renderHome() {
     return (
       <>
-        <section className="hero">
+        <section className="hero hero--premium">
           <div className="container hero__grid">
             <div className="fade-up">
-              <p className="eyebrow">هوية رسمية حديثة</p>
-              <h1>بوابة نقابية متكاملة لأطباء الأسنان في محافظة اللاذقية</h1>
+              <p className="eyebrow">بوابة رقمية متقدمة للنقابة</p>
+              <h1>تجربة أخبار وفعاليات بمعايير UI/UX حديثة</h1>
               <p className="hero__text">
-                منصة رسمية بهوية أخضر/ذهبي، مع أقسام واضحة: الرئيسية، الأخبار والأنشطة، آخر
-                الأخبار، ومن نحن.
+                تصميم متوازن وسريع، مستوحى من أسلوب المنصات الرسمية الكبيرة، مع إبراز آخر الأخبار
+                ومعرض فعاليات ذكي حسب عدد الأيام والتصنيف.
               </p>
               <div className="hero__actions">
-                <a href="#/news-section/activities" className="btn btn--primary">
-                  الأخبار والأنشطة
-                </a>
-                <a href="#/news-section/latest-news" className="btn btn--ghost">
+                <a href="#/news-section/latest-news" className="btn btn--lux">
                   آخر الأخبار
+                </a>
+                <a href="#/events-gallery" className="btn btn--primary">
+                  معرض الفعاليات
                 </a>
                 <a href="#/about" className="btn btn--ghost">
                   من نحن
@@ -218,9 +322,9 @@ function App() {
               </div>
             </div>
 
-            <div className="hero__panel fade-up delay-1">
+            <div className="hero__panel glass fade-up delay-1">
               <h2>مؤشرات الفرع</h2>
-              <div className="metrics">
+              <div className="metrics metrics--2col">
                 {highlights.map((item) => (
                   <div key={item.label} className="metric hover-lift">
                     <p>{item.value}</p>
@@ -235,14 +339,20 @@ function App() {
         <main className="container">
           <section className="section">
             <div className="section__head fade-up">
-              <h2>الخدمات الرئيسية</h2>
-              <p>إدارة متكاملة للخدمات المهنية والإدارية ضمن واجهة موحدة.</p>
+              <h2>الخدمات الأساسية</h2>
+              <p>نظام واجهات أبسط، بطاقات أوضح، وأزرار عملية سريعة.</p>
             </div>
-            <div className="cards">
+            <div className="cards cards--premium">
               {services.map((service, index) => (
-                <article key={service.title} className={`card hover-lift fade-up delay-${(index % 3) + 1}`}>
+                <article key={service.title} className={`card card--feature fade-up delay-${(index % 3) + 1}`}>
+                  <span className="card__icon" aria-hidden="true">
+                    {service.icon}
+                  </span>
                   <h3>{service.title}</h3>
                   <p>{service.text}</p>
+                  <button type="button" className="btn btn--small btn--ghost">
+                    التفاصيل
+                  </button>
                 </article>
               ))}
             </div>
@@ -250,32 +360,64 @@ function App() {
 
           <section className="section">
             <div className="section__head fade-up">
-              <h2>الأقسام</h2>
-              <p>توجيه مباشر وسريع للأقسام الأساسية.</p>
+              <h2>خارطة الأقسام والتوجيه</h2>
+              <p>انتقال سريع لكل قسم أساسي داخل الموقع.</p>
             </div>
-            <div className="cards">
-              <article className="card hover-lift">
+            <div className="cards cards--premium">
+              <article className="card card--feature hover-lift">
                 <h3>الرئيسية</h3>
-                <p>الواجهة العامة والملخص السريع للخدمات.</p>
-                <a className="link" href="#/">
-                  الذهاب إلى الرئيسية
+                <p>الواجهة العامة والملخص السريع.</p>
+                <a className="btn btn--small btn--primary" href="#/">
+                  فتح الرئيسية
                 </a>
               </article>
-              <article className="card hover-lift">
+              <article className="card card--feature hover-lift">
                 <h3>الأخبار والأنشطة</h3>
-                <p>جميع الأخبار المتعلقة بالأنشطة العلمية والفعاليات.</p>
-                <a className="link" href="#/news-section/activities">
-                  فتح الأخبار والأنشطة
+                <p>تغطية متكاملة للأخبار المرتبطة بالفعاليات العلمية.</p>
+                <a className="btn btn--small btn--primary" href="#/news-section/activities">
+                  فتح القسم
                 </a>
               </article>
-              <article className="card hover-lift">
+              <article className="card card--feature hover-lift">
                 <h3>آخر الأخبار</h3>
-                <p>آخر الأخبار المحدثة بصياغة مشابهة للقسم المرجعي.</p>
-                <a className="link" href="#/news-section/latest-news">
-                  فتح آخر الأخبار
+                <p>أحدث التحديثات الرسمية بأسلوب عرض متجدد.</p>
+                <a className="btn btn--small btn--primary" href="#/news-section/latest-news">
+                  عرض آخر الأخبار
+                </a>
+              </article>
+              <article className="card card--feature hover-lift">
+                <h3>معرض الفعاليات</h3>
+                <p>صور الفعاليات حسب عدد الأيام والتصنيف.</p>
+                <a className="btn btn--small btn--primary" href="#/events-gallery">
+                  فتح المعرض
                 </a>
               </article>
             </div>
+          </section>
+
+          <section className="section">
+            <div className="section__head fade-up">
+              <h2>معاينة سريعة لمعرض الفعاليات</h2>
+              <p>عرض مختصر قبل الدخول للمعرض الكامل.</p>
+            </div>
+            <div className="cards cards--premium">
+              {events.slice(0, 2).map((event) => (
+                <article key={event.id} className="card card--feature gallery-preview hover-lift">
+                  <img src={event.photos[0]} alt={event.title} loading="lazy" />
+                  <div className="gallery-preview__content">
+                    <h3>{event.title}</h3>
+                    <p>{event.description}</p>
+                    <div className="badges-row">
+                      <span className="badge">{event.categoryLabel}</span>
+                      <span className="badge">{event.days} أيام</span>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <a href="#/events-gallery" className="btn btn--lux">
+              عرض المعرض الكامل
+            </a>
           </section>
         </main>
       </>
@@ -293,18 +435,94 @@ function App() {
         <h1>{currentSection.title}</h1>
         <p className="section-description">{currentSection.description}</p>
 
-        <div className="timeline">
+        <div className="timeline timeline--premium">
           {sectionNews.map((item, index) => (
-            <article key={item.slug} className={`timeline__item hover-lift fade-up delay-${(index % 3) + 1}`}>
+            <article key={item.slug} className={`timeline__item card--feature fade-up delay-${(index % 3) + 1}`}>
               <p className="meta">{item.date}</p>
               <h3>{item.title}</h3>
               <p>{item.excerpt}</p>
-              <a className="btn btn--small" href={`#/news/${item.slug}`}>
+              <a className="btn btn--small btn--primary" href={`#/news/${item.slug}`}>
                 قراءة الخبر
               </a>
             </article>
           ))}
         </div>
+      </main>
+    )
+  }
+
+  function renderEventsGallery() {
+    return (
+      <main className="container section-page fade-up">
+        <a className="back-link" href="#/">
+          ← العودة إلى الرئيسية
+        </a>
+
+        <h1>معرض صور الفعاليات</h1>
+        <p className="section-description">
+          استعرض الفعاليات حسب القسم وعدد أيام كل فعالية ضمن تجربة بصرية مميزة.
+        </p>
+
+        <section className="gallery-filters">
+          <div>
+            <h3>التصنيف</h3>
+            <div className="filter-chips">
+              {galleryCategories.map((category) => (
+                <button
+                  key={category.id}
+                  type="button"
+                  className={`chip ${galleryCategory === category.id ? 'chip--active' : ''}`}
+                  onClick={() => setGalleryCategory(category.id)}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3>عدد الأيام</h3>
+            <div className="filter-chips">
+              {dayFilters.map((day) => (
+                <button
+                  key={day.id}
+                  type="button"
+                  className={`chip ${galleryDays === day.id ? 'chip--active' : ''}`}
+                  onClick={() => setGalleryDays(day.id)}
+                >
+                  {day.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div className="event-grid">
+          {filteredEvents.map((event) => (
+            <article key={event.id} className="event-card">
+              <div className="event-card__head">
+                <h2>{event.title}</h2>
+                <div className="badges-row">
+                  <span className="badge">{event.categoryLabel}</span>
+                  <span className="badge">{event.days} أيام</span>
+                </div>
+              </div>
+
+              <p>{event.description}</p>
+              <p className="meta">{event.date} • {event.location}</p>
+
+              <div className="event-photos">
+                {event.photos.map((photoUrl, idx) => (
+                  <img key={photoUrl} src={photoUrl} alt={`${event.title} - صورة ${idx + 1}`} loading="lazy" />
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {filteredEvents.length === 0 ? (
+          <p className="empty-state">لا توجد فعاليات مطابقة للفلاتر المختارة حاليًا.</p>
+        ) : null}
       </main>
     )
   }
@@ -315,19 +533,15 @@ function App() {
         <a className="back-link" href="#/">
           ← العودة إلى الرئيسية
         </a>
-        <article className="news-detail">
+        <article className="news-detail glass">
           <h1>من نحن</h1>
           <p>
             نقابة أطباء الأسنان فرع اللاذقية هي المظلة المهنية الرسمية التي تمثل أطباء الأسنان في
             المحافظة، وتعمل على تنظيم المهنة، تطوير المهارات، وخدمة المجتمع.
           </p>
           <p>
-            نلتزم بتقديم خدمات نقابية حديثة، وتعزيز التعليم المستمر، ودعم الممارسة المهنية الآمنة
-            وفق المعايير المعتمدة.
-          </p>
-          <p>
-            تعتمد المنصة الحالية شعارًا مؤقتًا وهوية بصرية باللونين الأخضر والذهبي إلى حين اعتماد
-            الهوية النهائية.
+            نطوّر المنصة باستمرار وفق مبادئ UX الحديثة: وضوح التوجيه، سرعة الوصول، وتقديم المحتوى
+            بشكل سهل القراءة على كل الأجهزة.
           </p>
         </article>
       </main>
@@ -353,7 +567,7 @@ function App() {
           <div className="news-actions">
             <button
               type="button"
-              className="btn btn--small"
+              className="btn btn--small btn--lux"
               onClick={() => shareTo('whatsapp', newsUrl, currentNews.title)}
             >
               مشاركة الخبر
@@ -411,6 +625,7 @@ function App() {
             <a href="#/">الرئيسية</a>
             <a href="#/news-section/activities">الأخبار والأنشطة</a>
             <a href="#/news-section/latest-news">آخر الأخبار</a>
+            <a href="#/events-gallery">معرض الفعاليات</a>
             <a href="#/about">من نحن</a>
           </nav>
         </div>
@@ -421,11 +636,11 @@ function App() {
           <p>
             {notificationPermission === 'granted' && 'الإشعارات مفعّلة ✅'}
             {notificationPermission === 'denied' && 'تم رفض الإشعارات. يمكنك تفعيلها من إعدادات المتصفح.'}
-            {notificationPermission === 'default' && 'للحصول على آخر الأخبار فورًا، فعّل الإشعارات.'}
+            {notificationPermission === 'default' && 'فعّل الإشعارات للحصول على آخر الأخبار فور نشرها.'}
             {notificationPermission === 'unsupported' && 'متصفحك لا يدعم إشعارات الويب.'}
           </p>
           {notificationPermission !== 'granted' && notificationPermission !== 'unsupported' ? (
-            <button type="button" className="btn btn--small" onClick={requestNotifications}>
+            <button type="button" className="btn btn--small btn--primary" onClick={requestNotifications}>
               طلب إرسال إشعارات
             </button>
           ) : null}
@@ -434,6 +649,7 @@ function App() {
 
       {route.type === 'home' && renderHome()}
       {route.type === 'about' && renderAboutPage()}
+      {route.type === 'events-gallery' && renderEventsGallery()}
       {route.type === 'news-section' && currentSection && renderNewsSectionPage()}
       {route.type === 'news' && currentNews && renderNewsDetail()}
 
